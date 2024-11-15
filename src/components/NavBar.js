@@ -1,13 +1,14 @@
-import React from 'react'
+import React from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import chalk_logo from '../assets/chalk_logo.png'
+import styles from '../styles/NavBar.module.css';
 
 const NavBar = () => {
     return (
-        <Navbar bg="light" expand="md" fixed='top'>
+        <Navbar className={styles.NavBar} expand="md" fixed='top'>
             <Container>
                 <Navbar.Brand>
-                    <img src={chalk_logo} alt='logo' height='75' />
+                    <img src={chalk_logo} alt='logo' height='80' />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
