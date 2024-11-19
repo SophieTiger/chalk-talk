@@ -1,19 +1,78 @@
 import React from 'react';
 import { Navbar, Container, Nav } from 'react-bootstrap';
-import chalk_logo from '../assets/chalk_logo.png'
+import chalk_logo from '../assets/chalk_logo.png';
 import styles from '../styles/NavBar.module.css';
 import { NavLink } from 'react-router-dom';
-import { useCurrentUser } from '../contexts/CurrentUserContext';
+import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
+import Avatar from './Avatar';
+import axios from 'axios';
 
 const NavBar = () => {
     const currentUser = useCurrentUser();
-    const loggedInIcons = <>{currentUser?.username}</>
+    const setCurrentUser = useSetCurrentUser();
+
+    const handleSignOut = async () => {
+        try {
+            await axios.post('dj-rest-auth/logout/');
+            setCurrentUser(null);
+        }catch(err){
+            console.log(err);
+        }
+    };
+
+    const addPostIcon = (
+        <NavLink
+            className={styles.Navlink}
+            activeClassName={styles.Active}
+            to="/posts/create"
+        >
+            <i className='far fa-plus-square'></i>Add post
+        </NavLink>
+    );
+
+    const loggedInIcons = <>
+        <NavLink
+            className={styles.Navlink}
+            activeClassName={styles.Active}
+            to="/friends"
+        >
+            <i className='fa-solid fa-user-group'></i>Friends
+        </NavLink>
+        <NavLink
+            className={styles.Navlink}
+            activeClassName={styles.Active}
+            to="/personalrecords"
+        >
+            <i className='fa-solid fa-pen-to-square'></i>PR's
+        </NavLink>
+        <NavLink
+            className={styles.Navlink}
+            to="/"
+            onClick={handleSignOut}
+        >
+            <i className='fas fa-sign-out-alt'></i>Sign out
+        </NavLink>
+        <NavLink
+            className={styles.Navlink}
+            to={`/profiles/${currentUser?.profile_id}`}
+        >
+            <Avatar src={currentUser?.profile_image} text={currentUser?.profile_username} height={40} />
+        </NavLink>
+    </>;
     const loggedOutIcons = (
         <>
-            <NavLink className={styles.Navlink} activeClassName={styles.Active} to="/signin">
+            <NavLink
+                className={styles.Navlink}
+                activeClassName={styles.Active}
+                to="/signin"
+            >
                 <i className='fas fa-sign-in-alt'></i> Sign In
             </NavLink>
-            <NavLink className={styles.Navlink} activeClassName={styles.Active} to="/signup">
+            <NavLink
+                className={styles.Navlink}
+                activeClassName={styles.Active}
+                to="/signup"
+            >
                 <i className='fas fa-user-plus'></i> Sign Up
             </NavLink>
         </>
@@ -33,11 +92,12 @@ const NavBar = () => {
                             <i className='fas fa-home'></i> Home
                         </NavLink >
                         {currentUser ? loggedInIcons : loggedOutIcons}
+                        {currentUser && addPostIcon}
                     </Nav>
                 </Navbar.Collapse>
             </Container>
         </Navbar >
-    )
-}
+    );
+};
 
-export default NavBar
+export default NavBar;
