@@ -2,9 +2,27 @@
     background-color: #ffffff;
     border: 1px solid #dadadf;
 }
-.NavLink {
+
+.Navlink {
     padding: 5px;
+    color: #555; 
+    transition: color 0.3s ease;
 }
-.Active i {
+
+.Active,
+.Active i,
+.Navlink.Active {
     color: #faad1ff3;
+}
+
+.Navlink.Active img {
+    border: 2px solid #faad1ff3; 
+}
+
+.Navlink:hover {
+    color: #faad1ff3;
+}
+
+.Navlink:hover img {
+    opacity: 0.8;
 }

@@ -11,7 +11,7 @@ import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
 const NavBar = () => {
     const currentUser = useCurrentUser();
     const setCurrentUser = useSetCurrentUser();
-    const {expanded, setExpanded, ref} = useClickOutsideToggle();
+    const { expanded, setExpanded, ref } = useClickOutsideToggle();
 
 
     const handleSignOut = async () => {
@@ -23,7 +23,7 @@ const NavBar = () => {
         }
     };
 
-    const addPostIcon = (
+    const loggedInIcons = <>
         <NavLink
             className={styles.Navlink}
             activeClassName={styles.Active}
@@ -31,9 +31,6 @@ const NavBar = () => {
         >
             <i className='far fa-plus-square'></i>Add post
         </NavLink>
-    );
-
-    const loggedInIcons = <>
         <NavLink
             className={styles.Navlink}
             activeClassName={styles.Active}
@@ -50,16 +47,21 @@ const NavBar = () => {
         </NavLink>
         <NavLink
             className={styles.Navlink}
+            activeClassName={styles.Active}
+            to={`/profiles/${currentUser?.profile_id}`}
+        >
+            <Avatar
+                src={currentUser?.profile_image}
+                text={currentUser?.username}
+                height={40}
+            />
+        </NavLink>
+        <NavLink
+            className={styles.Navlink}
             to="/"
             onClick={handleSignOut}
         >
             <i className='fas fa-sign-out-alt'></i>Sign out
-        </NavLink>
-        <NavLink
-            className={styles.Navlink}
-            to={`/profiles/${currentUser?.profile_id}`}
-        >
-            <Avatar src={currentUser?.profile_image} text={currentUser?.username} height={40} />
         </NavLink>
     </>;
     const loggedOutIcons = (
@@ -91,15 +93,14 @@ const NavBar = () => {
                 <Navbar.Toggle
                     ref={ref}
                     onClick={() => setExpanded(!expanded)}
-                    aria-controls="basic-navbar-nav" 
-                    />
+                    aria-controls="basic-navbar-nav"
+                />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto text-left">
                         <NavLink exact className={styles.Navlink} activeClassName={styles.Active} to="/">
                             <i className='fas fa-home'></i> Home
                         </NavLink >
                         {currentUser ? loggedInIcons : loggedOutIcons}
-                        {currentUser && addPostIcon}
                     </Nav>
                 </Navbar.Collapse>
             </Container>
