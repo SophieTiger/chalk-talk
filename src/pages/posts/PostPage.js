@@ -4,16 +4,16 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
-import appStyles from "../App.module.css";
+import appStyles from "../../App.module.css";
 import { useParams } from "react-router-dom/cjs/react-router-dom";
-import { axiosReq } from "../api/axiosDefaults";
-import Post from "./posts/Post";
-import CommentCreateForm from "./comments/CommentCreateForm";
-import { useCurrentUser } from "../contexts/CurrentUserContext";
-import Comment from "./comments/Comment";
-import Asset from "../components/Asset";
+import { axiosReq } from "../../api/axiosDefaults";
+import Post from "./Post";
+import CommentCreateForm from "../comments/CommentCreateForm";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import Comment from "../comments/Comment";
+import Asset from "../../components/Asset";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { fetchMoreData } from "../utils/utils";
+import { fetchMoreData } from "../../utils/utils";
 
 
 function PostPage() {
@@ -82,7 +82,7 @@ function PostPage() {
         </Container>
       </Col>
       <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-        Popular profiles for desktop
+        <p>Popular profiles desktop</p>
       </Col>
     </Row>
   );
