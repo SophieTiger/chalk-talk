@@ -6,7 +6,7 @@ import styles from "../../styles/Comment.module.css";
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { MoreDropdown } from '../../components/MoreDropdown';
 import { axiosRes } from '../../api/axiosDefaults';
-
+import CommentEditForm from "./CommentEditForm";
 
 
 const Comment = (props) => {
@@ -21,12 +21,13 @@ const Comment = (props) => {
         setComments,
     } = props;
 
+    const [showEditForm, setShowEditForm] = useState(false);
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
 
     const handleDelete = async () => {
         try {
-            await axiosRes.delete(`/comments/${id}/`)
+            await axiosRes.delete(`/comments/${id}/`);
             setPost(prevPost => ({
                 results: [{
                     ...prevPost.results[0],
@@ -39,10 +40,10 @@ const Comment = (props) => {
                 ...prevComments,
                 results: prevComments.results.filter((comment) => comment.id !== id),
             }));
-        } catch(err){
+        } catch (err) {
 
         }
-    }
+    };
 
 
     return (
@@ -55,17 +56,29 @@ const Comment = (props) => {
                 <Media.Body className="align-self-center ml-2">
                     <span className={styles.Owner}>{owner}</span>
                     <span className={styles.Date}>{updated_at}</span>
-                    <p>{content}</p>
+                    {showEditForm ? (
+                        <CommentEditForm
+                            id={id}
+                            profile_id={profile_id}
+                            content={content}
+                            profileImage={profile_image}
+                            setComments={setComments}
+                            setShowEditForm={setShowEditForm}
+                        />
+                    ) : (
+                        <p>{content}</p>
+                    )}
 
                 </Media.Body>
-                {is_owner && (
-                    <MoreDropdown handleDelete={handleDelete} handleEdit={() => {}} />
+                {is_owner && !showEditForm && (
+                    <MoreDropdown
+                        handleEdit={() => setShowEditForm(true)}
+                        handleDelete={handleDelete}
+                    />
                 )}
-
             </Media>
-            </>
+        </>
     );
 };
-
 
 export default Comment;
