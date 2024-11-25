@@ -20,6 +20,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Post from "../posts/Post";
 import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
+import { ProfileEditDropdown } from "../../components/MoreDropdown";
 
 function ProfilePage() {
     const [hasLoaded, setHasLoaded] = useState(false);
@@ -53,6 +54,7 @@ function ProfilePage() {
 
     const mainProfile = (
         <>
+            {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
             <Row noGutters className="px-3 text-center">
                 <Col lg={3} className="text-lg-left">
                     <Image
@@ -63,6 +65,11 @@ function ProfilePage() {
                 </Col>
                 <Col lg={6}>
                     <h3 className="m-2">{profile?.owner}</h3>
+                    {profile?.crossfit_experience && (
+                        <div className="m-2">
+                            CrossFit Experience: {profile.crossfit_experience}
+                        </div>
+                    )}
                     <Row className="justify-content-center no-gutters">
                         <Col xs={3} className="my-2">
                             <div>{profile?.posts_count}</div>
@@ -95,7 +102,7 @@ function ProfilePage() {
                         </Button>
                     ))}
                 </Col>
-                {profile?.content && (<Col className="p-3">{profile.content}</Col>)}
+                {profile?.bio && (<Col className="p-3">{profile.bio}</Col>)}
             </Row>
         </>
     );
