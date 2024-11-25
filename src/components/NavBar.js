@@ -41,7 +41,7 @@ const NavBar = () => {
         <NavLink
             className={styles.Navlink}
             activeClassName={styles.Active}
-            to="/personalrecords"
+            to="/personalrecords/create"
         >
             <i className='fa-solid fa-user-pen'></i>PR's
         </NavLink>
