@@ -71,6 +71,13 @@ function ProfilePage() {
                             CrossFit Experience: {profile.crossfit_experience}
                         </div>
                     )}
+                    {profile?.bio && (
+                        <Col className="p-3">
+                            <blockquote className="blockquote">
+                                <p className={styles.blockquote}>{profile.bio}</p>
+                            </blockquote>
+                        </Col>
+                    )}
                     <Row className="justify-content-center no-gutters">
                         <Col xs={3} className="my-2">
                             <div>{profile?.posts_count}</div>
@@ -103,7 +110,6 @@ function ProfilePage() {
                         </Button>
                     ))}
                 </Col>
-                {profile?.bio && (<Col className="p-3">{profile.bio}</Col>)}
             </Row>
         </>
     );

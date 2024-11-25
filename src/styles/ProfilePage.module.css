@@ -11,3 +11,9 @@
       height: 250px;
     }
   }
+
+  .blockquote {
+    border-left: 4px solid goldenrod; /* Change color as needed */
+    padding-left: 1rem; /* Space between border and text */
+    font-style: italic; /* Italicize text */
+}
