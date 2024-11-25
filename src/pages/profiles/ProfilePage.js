@@ -78,7 +78,7 @@ function ProfilePage() {
                             </blockquote>
                         </Col>
                     )}
-                    <Row className="justify-content-center no-gutters">
+                    <Row className={`justify-content-center no-gutters ${styles.statsRow}`}>
                         <Col xs={3} className="my-2">
                             <div>{profile?.posts_count}</div>
                             <div>posts</div>
