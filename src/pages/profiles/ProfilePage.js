@@ -65,6 +65,7 @@ function ProfilePage() {
                 </Col>
                 <Col lg={6}>
                     <h3 className="m-2">{profile?.owner}</h3>
+                    <p>{profile?.name}</p>
                     {profile?.crossfit_experience && (
                         <div className="m-2">
                             CrossFit Experience: {profile.crossfit_experience}
