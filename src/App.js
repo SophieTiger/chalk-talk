@@ -16,6 +16,7 @@ import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import PersonalRecordForm from './pages/personalrecords/PersonalRecordForm';
+import PersonalRecordPage from './pages/personalrecords/PersonalRecordPage';
 
 
 function App() {
@@ -50,7 +51,7 @@ function App() {
           <Route exact path="/posts/create" render={() => <PostCreateForm />} />
           <Route exact path="/posts/:id" render={() => <PostPage />} />
           <Route exact path="/posts/:id/edit" render={() => <PostEditForm />} />
-          <Route exact path="/personalrecords/create" render={() => <PersonalRecordForm />} />
+          <Route exact path="/personalrecords/create" render={() => <PersonalRecordPage />} />
           <Route exact path="/profiles/:id" render={() => <ProfilePage />} />
           <Route
             exact
