@@ -1,23 +1,15 @@
 import React, { useState, useEffect } from "react";
-import PersonalRecordDisplay from "./PersonalRecordDisplay";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import Alert from "react-bootstrap/Alert";
-
+import { Form, Button, Alert, Container, Row, Col } from "react-bootstrap";
+import { axiosReq } from "../../api/axiosDefaults";
 import styles from "../../styles/PersonalRecordCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
-
-import { useHistory } from "react-router-dom/cjs/react-router-dom";
-import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
+import PersonalRecordDisplay from "./PersonalRecordDisplay";
 
-function PersonalRecordCreateForm() {
+function PersonalRecordForm({ addRecord, updateRecord, currentRecord, setCurrentRecord, isEditing, setIsEditing }) {
     useRedirect('loggedOut');
-    const [personalRecordData, setPersonalRecordData] = useState({
+    const [formData, setFormData] = useState({
         exercise: "",
         weight: "",
         reps: "",
@@ -25,71 +17,67 @@ function PersonalRecordCreateForm() {
         notes: "",
     });
 
-    const { exercise, weight, reps, date_achieved, notes } = personalRecordData;
-    const history = useHistory();
     const [errors, setErrors] = useState({});
     const [records, setRecords] = useState([]);
 
-    // Fetch existing records on component mount
     useEffect(() => {
-        const fetchRecords = async () => {
-            try {
-                const { data } = await axiosReq.get('/personalrecords/');
-                setRecords(data.results); // Assuming paginated results
-            } catch (err) {
-                console.log(err);
-            }
-        };
-
-        fetchRecords();
-    }, []);
+        if (currentRecord) {
+            setFormData(currentRecord);
+        }
+    }, [currentRecord]);
 
     const handleChange = (event) => {
-        setPersonalRecordData({
-            ...personalRecordData,
+        setFormData({
+            ...formData,
             [event.target.name]: event.target.value,
         });
     };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const formData = new FormData();
+        const submitData = new FormData();
 
-        formData.append('exercise', exercise);
-        formData.append('weight', weight);
-        formData.append('reps', reps);
-        formData.append('date_achieved', date_achieved);
-        formData.append('notes', notes);
+        for (const key in formData) {
+            submitData.append(key, formData[key]);
+        }
 
         try {
-            const { data } = await axiosReq.post('/personalrecords/', formData);
-            setRecords([data, ...records]); // Add new record to the list
-            history.push(`/personalrecords/${data.id}`);
+            if (isEditing) {
+                const { data } = await axiosReq.put(`/personalrecords/${currentRecord.id}/`, submitData);
+                updateRecord(data);
+                setIsEditing(false);
+            } else {
+                const { data } = await axiosReq.post('/personalrecords/', submitData);
+                addRecord(data);
+            }
+            resetForm();
         } catch (err) {
             console.log(err);
-            if (err.response?.status !== 401) {
-                setErrors(err.response?.data);
-            }
+            setErrors(err.response?.data || {});
         }
     };
 
+    const resetForm = () => {
+        setFormData({ exercise: "", weight: "", reps: "", date_achieved: "", notes: "" });
+        setCurrentRecord(null);
+    };
+
     return (
-        <Form onSubmit={handleSubmit}>
-            <Row>
-                <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
-                    <Container className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}>
-                        {records.length > 0 ? (
-                            records.map(record => (
-                                <PersonalRecordDisplay key={record.id} personalRecord={record} />
-                            ))
-                        ) : (
-                            <p>No personal records found. Create one!</p>
-                        )}
-                    </Container>
-                </Col>
-                <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
-                    <Container className={appStyles.Content}>
-                        {/* Form fields for creating a new record */}
+        <Row>
+            <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
+                <Container className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}>
+                    {records.length > 0 ? (
+                        records.map(record => (
+                            <PersonalRecordDisplay key={record.id} personalRecord={record} />
+                        ))
+                    ) : (
+                        <p>No personal records found. Create one!</p>
+                    )}
+                </Container>
+            </Col>
+            <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
+                <Container className={appStyles.Content}>
+                    <Form onSubmit={handleSubmit}>
                         <div className="text-center">
                             {/* Exercise input */}
                             <Form.Group>
@@ -97,7 +85,7 @@ function PersonalRecordCreateForm() {
                                 <Form.Control
                                     type="text"
                                     name="exercise"
-                                    value={exercise}
+                                    value={formData.exercise}
                                     onChange={handleChange}
                                 />
                             </Form.Group>
@@ -113,7 +101,7 @@ function PersonalRecordCreateForm() {
                                 <Form.Control
                                     type="number"
                                     name="weight"
-                                    value={weight}
+                                    value={formData.weight}
                                     onChange={handleChange}
                                 />
                             </Form.Group>
@@ -129,7 +117,7 @@ function PersonalRecordCreateForm() {
                                 <Form.Control
                                     type="number"
                                     name="reps"
-                                    value={reps}
+                                    value={formData.reps}
                                     onChange={handleChange}
                                 />
                             </Form.Group>
@@ -145,7 +133,7 @@ function PersonalRecordCreateForm() {
                                 <Form.Control
                                     type="date"
                                     name="date_achieved"
-                                    value={date_achieved}
+                                    value={formData.date_achieved}
                                     onChange={handleChange}
                                 />
                             </Form.Group>
@@ -161,7 +149,7 @@ function PersonalRecordCreateForm() {
                                 <Form.Control
                                     type="text"
                                     name="notes"
-                                    value={notes}
+                                    value={formData.notes}
                                     onChange={handleChange}
                                 />
                             </Form.Group>
@@ -170,23 +158,26 @@ function PersonalRecordCreateForm() {
                                     {message}
                                 </Alert>
                             ))}
-
-                            {/* Buttons */}
                             <Button
+                                type="submit"
                                 className={`${btnStyles.Button} ${btnStyles.Green}`}
-                                onClick={() => history.goBack()}
                             >
-                                Cancel
+                                {isEditing ? "Update" : "Create"} Record
                             </Button>
-                            <Button className={`${btnStyles.Button} ${btnStyles.Green}`} type="submit">
-                                Create
-                            </Button>
+                            {isEditing && (
+                                <Button
+                                    onClick={resetForm}
+                                    className={`${btnStyles.Button} ${btnStyles.Green}`}
+                                >
+                                    Cancel Edit
+                                </Button>
+                            )}
                         </div>
-                    </Container>
-                </Col>
-            </Row>
-        </Form >
+                    </Form>
+                </Container>
+            </Col>
+        </Row>
     );
 }
 
-export default PersonalRecordCreateForm;
+export default PersonalRecordForm;
