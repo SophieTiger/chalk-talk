@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 import { MoreDropdown } from '../../components/MoreDropdown';
 import appStyles from "../../App.module.css";
 
-const PersonalRecordDisplay = ({ personalRecord, onEdit, onDelete }) => {
+const PersonalRecordDisplay = ({ personalRecord, onEdit, onDelete, isOwner }) => {
   const handleDelete = () => {
     if (window.confirm("are you sure you want to delete this record?")) {
       onDelete(personalRecord.id);
@@ -17,10 +17,13 @@ const PersonalRecordDisplay = ({ personalRecord, onEdit, onDelete }) => {
       <p><strong>Reps:</strong> {personalRecord.reps}</p>
       <p><strong>Date Achieved:</strong> {personalRecord.date_achieved}</p>
       {personalRecord.notes && <p><strong>Notes:</strong> {personalRecord.notes}</p>}
-      <MoreDropdown
+      {isOwner && (
+        <MoreDropdown
         handleEdit={() => onEdit(personalRecord)}
         handleDelete={handleDelete}
       />
+      )}
+      
     </Container>
   );
 };

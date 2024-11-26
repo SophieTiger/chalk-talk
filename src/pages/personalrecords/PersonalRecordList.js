@@ -1,7 +1,7 @@
 import React from 'react';
 import PersonalRecordDisplay from './PersonalRecordDisplay';
 
-function PersonalRecordList({ records, onEdit, onDelete }) {
+function PersonalRecordList({ records, onEdit, onDelete, isOwner }) {
     return (
         <div>
             <h2>Personal Records</h2>
@@ -10,8 +10,9 @@ function PersonalRecordList({ records, onEdit, onDelete }) {
                     <PersonalRecordDisplay 
                         key={record.id} 
                         personalRecord={record} 
-                        onEdit={() => onEdit(record)}
-                        onDelete={() => onDelete(record.id)}
+                        onEdit={isOwner ? onEdit : null}
+                        onDelete={isOwner ? onDelete : null}
+                        isOwner={isOwner}
                     />
                 ))
             ) : (

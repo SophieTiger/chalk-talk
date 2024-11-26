@@ -10,7 +10,6 @@ import styles from "../../styles/ProfilePage.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
-import PopularProfiles from "./PopularProfiles";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
@@ -21,6 +20,7 @@ import Post from "../posts/Post";
 import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
+import PersonalRecordList from "../personalrecords/PersonalRecordList";
 
 function ProfilePage() {
     const [hasLoaded, setHasLoaded] = useState(false);
@@ -144,7 +144,7 @@ function ProfilePage() {
     return (
         <Row>
             <Col className="py-2 p-0 p-lg-2" lg={8}>
-                <PopularProfiles mobile />
+                <PersonalRecordList mobile />
                 <Container className={appStyles.Content}>
                     {hasLoaded ? (
                         <>
@@ -157,7 +157,7 @@ function ProfilePage() {
                 </Container>
             </Col>
             <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-                <PopularProfiles />
+                <PersonalRecordList />
             </Col>
         </Row>
     );

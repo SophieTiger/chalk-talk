@@ -1,28 +1,38 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import PersonalRecordList from "./PersonalRecordList";
 import PersonalRecordForm from "./PersonalRecordForm";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
 function PersonalRecordPage() {
     useRedirect('loggedOut');
+    const currentUser = useCurrentUser();
     const [records, setRecords] = useState([]);
     const [isEditing, setIsEditing] = useState(false);
     const [currentRecord, setCurrentRecord] = useState(null);
 
     useEffect(() => {
-        fetchRecords();
-    }, []);
+        if (currentUser) {
+            fetchRecords();
+        }
+    }, [currentUser]);
 
-    const fetchRecords = async () => {
+    const fetchRecords = useCallback(async () => {
         try {
-            const { data } = await axiosReq.get('/personalrecords/');
+            const { data } = await axiosReq.get('/personalrecords/', {
+                params: {owner: currentUser.id},
+            });
             setRecords(data.results);
         } catch (err) {
             console.log(err);
         }
-    };
+    }, [currentUser]);
+
+    useEffect(() => {
+        fetchRecords();
+    }, [fetchRecords]);
 
     const addRecord = (newRecord) => {
         setRecords([newRecord, ...records]);
@@ -46,15 +56,20 @@ function PersonalRecordPage() {
     return (
         <Container>
             <Row>
-                <Col md={7}>
-                    <PersonalRecordList 
-                        records={records} 
-                        onEdit={(record) => {
-                            setCurrentRecord(record);
-                            setIsEditing(true);
-                        }}
-                        onDelete={deleteRecord}
-                    />
+            <Col md={7}>
+                    {records.length > 0 ? (
+                        <PersonalRecordList 
+                            records={records} 
+                            onEdit={(record) => {
+                                setCurrentRecord(record);
+                                setIsEditing(true);
+                            }}
+                            onDelete={deleteRecord}
+                            isOwner={true}
+                        />
+                    ) : (
+                        <p>You don't have any personal records yet. Add your first record!</p>
+                    )}
                 </Col>
                 <Col md={5}>
                     <PersonalRecordForm 
