@@ -1,26 +1,20 @@
 import React, { useEffect, useState } from "react";
-
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
-
-import Asset from "../../components/Asset";
-
-import styles from "../../styles/ProfilePage.module.css";
-import appStyles from "../../App.module.css";
-import btnStyles from "../../styles/Button.module.css";
-
+import { Col, Row, Container, Button, Image } from "react-bootstrap";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useProfileData, useSetProfileData } from "../../contexts/ProfileDataContext";
-import { Button, Image } from "react-bootstrap";
 import InfiniteScroll from "react-infinite-scroll-component";
+import Asset from "../../components/Asset";
 import Post from "../posts/Post";
 import { fetchMoreData } from "../../utils/utils";
 import NoResults from "../../assets/no-results.png";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
 import PersonalRecordList from "../personalrecords/PersonalRecordList";
+
+import styles from "../../styles/ProfilePage.module.css";
+import appStyles from "../../App.module.css";
+import btnStyles from "../../styles/Button.module.css";
 
 function ProfilePage() {
     const [hasLoaded, setHasLoaded] = useState(false);
@@ -28,22 +22,25 @@ function ProfilePage() {
     const { id } = useParams();
     const { setProfileData, handleFollow, handleUnfollow } = useSetProfileData();
     const { pageProfile } = useProfileData();
-    const [profile] = pageProfile.results;
+    const [profile] = pageProfile.results || [];
     const is_owner = currentUser?.username === profile?.owner;
     const [profilePosts, setProfilePosts] = useState({ results: [] });
+    const [profileRecords, setProfileRecords] = useState([]); // Initialize as an empty array
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const [{ data: pageProfile }, { data: profilePosts }] = await Promise.all([
+                const [{ data: pageProfile }, { data: profilePosts }, { data: profileRecords }] = await Promise.all([
                     axiosReq.get(`/profiles/${id}/`),
-                    axiosReq.get(`/posts/?owner__profile=${id}`)
+                    axiosReq.get(`/posts/?owner__profile=${id}`),
+                    axiosReq.get(`/personalrecords/?owner=${id}`), // Fetch personal records
                 ]);
                 setProfileData(prevState => ({
                     ...prevState,
                     pageProfile: { results: [pageProfile] },
                 }));
                 setProfilePosts(profilePosts);
+                setProfileRecords(profileRecords.results || []); // Ensure results are handled correctly
                 setHasLoaded(true);
             } catch (err) {
                 console.log(err);
@@ -144,11 +141,15 @@ function ProfilePage() {
     return (
         <Row>
             <Col className="py-2 p-0 p-lg-2" lg={8}>
-                <PersonalRecordList mobile />
+            <PersonalRecordList records={profileRecords} isOwner={false} mobile />
                 <Container className={appStyles.Content}>
                     {hasLoaded ? (
                         <>
                             {mainProfile}
+                            {/* <hr />
+                            <h4>{profile?.owner}'s Personal Records</h4> */}
+                            {/* Pass records and ensure isOwner is false for read-only */}
+                            {/* <PersonalRecordList records={profileRecords} isOwner={false} /> */}
                             {mainProfilePosts}
                         </>
                     ) : (
@@ -156,9 +157,7 @@ function ProfilePage() {
                     )}
                 </Container>
             </Col>
-            <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-                <PersonalRecordList />
-            </Col>
+            <PersonalRecordList records={profileRecords} isOwner={false} />
         </Row>
     );
 }
