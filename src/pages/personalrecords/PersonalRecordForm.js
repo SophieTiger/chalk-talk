@@ -5,9 +5,10 @@ import styles from "../../styles/PersonalRecordCreateEditForm.module.css";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import { useRedirect } from "../../hooks/useRedirect";
-import PersonalRecordDisplay from "./PersonalRecordDisplay";
 
-function PersonalRecordForm({ addRecord, updateRecord, currentRecord, setCurrentRecord, isEditing, setIsEditing }) {
+
+function PersonalRecordForm({ addRecord, updateRecord, currentRecord,
+    setCurrentRecord, isEditing, setIsEditing, mobile }) {
     useRedirect('loggedOut');
     const [formData, setFormData] = useState({
         exercise: "",
@@ -64,7 +65,7 @@ function PersonalRecordForm({ addRecord, updateRecord, currentRecord, setCurrent
 
     return (
         <Row>
-            <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
+            <Col className={mobile ? "" : "d-none d-md-block"}>
                 <Container className={appStyles.Content}>
                     <Form onSubmit={handleSubmit}>
                         <div className="text-center">

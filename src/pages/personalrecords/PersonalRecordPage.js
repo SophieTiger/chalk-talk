@@ -22,7 +22,7 @@ function PersonalRecordPage() {
     const fetchRecords = useCallback(async () => {
         try {
             const { data } = await axiosReq.get('/personalrecords/', {
-                params: {owner: currentUser.id},
+                params: { owner: currentUser.id },
             });
             setRecords(data.results);
         } catch (err) {
@@ -39,7 +39,7 @@ function PersonalRecordPage() {
     };
 
     const updateRecord = (updatedRecord) => {
-        setRecords(records.map(record => 
+        setRecords(records.map(record =>
             record.id === updatedRecord.id ? updatedRecord : record
         ));
     };
@@ -56,10 +56,21 @@ function PersonalRecordPage() {
     return (
         <Container>
             <Row>
-            <Col md={7}>
+                <Col xs={12} className="d-md-none mb-3">
+                    <PersonalRecordForm
+                        addRecord={addRecord}
+                        updateRecord={updateRecord}
+                        currentRecord={currentRecord}
+                        setCurrentRecord={setCurrentRecord}
+                        isEditing={isEditing}
+                        setIsEditing={setIsEditing}
+                        mobile
+                    />
+                </Col>
+                <Col xs={12} md={7}>
                     {records.length > 0 ? (
-                        <PersonalRecordList 
-                            records={records} 
+                        <PersonalRecordList
+                            records={records}
                             onEdit={(record) => {
                                 setCurrentRecord(record);
                                 setIsEditing(true);
@@ -71,8 +82,8 @@ function PersonalRecordPage() {
                         <p>You don't have any personal records yet. Add your first record!</p>
                     )}
                 </Col>
-                <Col md={5}>
-                    <PersonalRecordForm 
+                <Col md={5} className="d-none d-md-block">
+                    <PersonalRecordForm
                         addRecord={addRecord}
                         updateRecord={updateRecord}
                         currentRecord={currentRecord}
