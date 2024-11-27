@@ -73,6 +73,7 @@ function PersonalRecordPage() {
                 <Container className={appStyles.Content}>
                     {records.length > 0 ? (
                         <PersonalRecordList
+                            profileId={currentUser.profile_id}
                             records={records}
                             onEdit={(record) => {
                                 setCurrentRecord(record);

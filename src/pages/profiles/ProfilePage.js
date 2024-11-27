@@ -157,6 +157,7 @@ function ProfilePage() {
                 <PersonalRecordList
                     records={profileRecords}
                     isOwner={is_owner}
+                    profileId={id}
                 />
             </Col>
         </Row>

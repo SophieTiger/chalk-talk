@@ -6,14 +6,14 @@ import Asset from "../../components/Asset";
 import NoResults from "../../assets/no-results.png";
 import { axiosReq } from "../../api/axiosDefaults";
 
-function PersonalRecordList({ onEdit, onDelete, isOwner, mobile }) {
+function PersonalRecordList({ profileId, onEdit, onDelete, isOwner, mobile }) {
     const [records, setRecords] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
 
     useEffect(() => {
         const fetchRecords = async () => {
             try {
-                const { data } = await axiosReq.get('/personalrecords/');
+                const { data } = await axiosReq.get(`/personalrecords/?owner=${profileId}`);
                 setRecords(data);
                 setHasLoaded(true);
             } catch (err) {
@@ -29,7 +29,7 @@ function PersonalRecordList({ onEdit, onDelete, isOwner, mobile }) {
         return () => {
             clearTimeout(timer);
         };
-    }, []);
+    }, [profileId]);
 
     return (
         <Container
