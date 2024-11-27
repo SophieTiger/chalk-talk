@@ -141,15 +141,11 @@ function ProfilePage() {
     return (
         <Row>
             <Col className="py-2 p-0 p-lg-2" lg={8}>
-            <PersonalRecordList records={profileRecords} isOwner={false} mobile />
+                <PersonalRecordList records={profileRecords} isOwner={false} mobile />
                 <Container className={appStyles.Content}>
                     {hasLoaded ? (
                         <>
                             {mainProfile}
-                            {/* <hr />
-                            <h4>{profile?.owner}'s Personal Records</h4> */}
-                            {/* Pass records and ensure isOwner is false for read-only */}
-                            {/* <PersonalRecordList records={profileRecords} isOwner={false} /> */}
                             {mainProfilePosts}
                         </>
                     ) : (
@@ -157,7 +153,12 @@ function ProfilePage() {
                     )}
                 </Container>
             </Col>
-            <PersonalRecordList records={profileRecords} isOwner={false} />
+            <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
+                <PersonalRecordList
+                    records={profileRecords}
+                    isOwner={is_owner}
+                />
+            </Col>
         </Row>
     );
 }
