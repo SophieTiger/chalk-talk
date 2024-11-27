@@ -12,7 +12,7 @@ const PersonalRecordDisplay = ({ personalRecord, onEdit, onDelete, isOwner }) =>
 
   return (
     <Container className={appStyles.Content}>
-      <h3>{personalRecord.exercise}</h3>
+      <h4>{personalRecord.exercise}</h4>
       <p><strong>Weight:</strong> {personalRecord.weight} kg</p>
       <p><strong>Reps:</strong> {personalRecord.reps}</p>
       <p><strong>Date Achieved:</strong> {personalRecord.date_achieved}</p>
