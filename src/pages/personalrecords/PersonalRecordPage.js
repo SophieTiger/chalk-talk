@@ -5,6 +5,7 @@ import PersonalRecordForm from "./PersonalRecordForm";
 import { axiosReq } from "../../api/axiosDefaults";
 import { useRedirect } from "../../hooks/useRedirect";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import appStyles from "../../App.module.css";
 
 function PersonalRecordPage() {
     useRedirect('loggedOut');
@@ -54,20 +55,22 @@ function PersonalRecordPage() {
     };
 
     return (
-        <Container>
-            <Row>
-                <Col xs={12} className="d-md-none mb-3">
-                    <PersonalRecordForm
-                        addRecord={addRecord}
-                        updateRecord={updateRecord}
-                        currentRecord={currentRecord}
-                        setCurrentRecord={setCurrentRecord}
-                        isEditing={isEditing}
-                        setIsEditing={setIsEditing}
-                        mobile
-                    />
+        <Row>
+            <Col className="py-2 p-0 p-lg-2" lg={8}>
+                <Col xs={12} className="d-lg-none mb-3">
+                    <Container className={appStyles.Content}>
+                        <PersonalRecordForm
+                            addRecord={addRecord}
+                            updateRecord={updateRecord}
+                            currentRecord={currentRecord}
+                            setCurrentRecord={setCurrentRecord}
+                            isEditing={isEditing}
+                            setIsEditing={setIsEditing}
+                            mobile
+                        />
+                    </Container>
                 </Col>
-                <Col xs={12} md={7}>
+                <Container className={appStyles.Content}>
                     {records.length > 0 ? (
                         <PersonalRecordList
                             records={records}
@@ -81,8 +84,10 @@ function PersonalRecordPage() {
                     ) : (
                         <p>You don't have any personal records yet. Add your first record!</p>
                     )}
-                </Col>
-                <Col md={5} className="d-none d-md-block">
+                </Container>
+            </Col>
+            <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
+                <Container className={appStyles.Content}>
                     <PersonalRecordForm
                         addRecord={addRecord}
                         updateRecord={updateRecord}
@@ -91,9 +96,9 @@ function PersonalRecordPage() {
                         isEditing={isEditing}
                         setIsEditing={setIsEditing}
                     />
-                </Col>
-            </Row>
-        </Container>
+                </Container>
+            </Col>
+        </Row>
     );
 }
 
