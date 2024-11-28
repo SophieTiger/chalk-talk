@@ -14,20 +14,16 @@ function PersonalRecordPage() {
     const [isEditing, setIsEditing] = useState(false);
     const [currentRecord, setCurrentRecord] = useState(null);
 
-    useEffect(() => {
-        if (currentUser) {
-            fetchRecords();
-        }
-    }, [currentUser]);
-
     const fetchRecords = useCallback(async () => {
-        try {
-            const { data } = await axiosReq.get('/personalrecords/', {
-                params: { owner: currentUser.id },
-            });
-            setRecords(data.results);
-        } catch (err) {
-            console.log(err);
+        if (currentUser) {
+            try {
+                const { data } = await axiosReq.get('/personalrecords/', {
+                    params: { owner: currentUser.id },
+                });
+                setRecords(data.results);
+            } catch (err) {
+                console.log(err);
+            }
         }
     }, [currentUser]);
 
@@ -71,9 +67,8 @@ function PersonalRecordPage() {
                     </Container>
                 </Col>
                 <Container className={appStyles.Content}>
-                    {records.length > 0 ? (
                         <PersonalRecordList
-                            profileId={currentUser.profile_id}
+                            profileId={currentUser?.profile_id}
                             records={records}
                             onEdit={(record) => {
                                 setCurrentRecord(record);
@@ -82,9 +77,6 @@ function PersonalRecordPage() {
                             onDelete={deleteRecord}
                             isOwner={true}
                         />
-                    ) : (
-                        <p>You don't have any personal records yet. Add your first record!</p>
-                    )}
                 </Container>
             </Col>
             <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
