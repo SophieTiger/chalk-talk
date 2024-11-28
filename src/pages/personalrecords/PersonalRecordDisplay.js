@@ -4,8 +4,11 @@ import { MoreDropdown } from '../../components/MoreDropdown';
 import appStyles from "../../App.module.css";
 
 const PersonalRecordDisplay = ({ personalRecord, onEdit, onDelete, isOwner }) => {
+  console.log("PersonalRecordDisplay props:", { personalRecord, onEdit, onDelete, isOwner });
+
   const handleDelete = () => {
-    if (window.confirm("are you sure you want to delete this record?")) {
+    console.log("handleDelete called");
+    if (window.confirm("Are you sure you want to delete this personal record?")) {
       onDelete(personalRecord.id);
     }
   };
@@ -17,13 +20,15 @@ const PersonalRecordDisplay = ({ personalRecord, onEdit, onDelete, isOwner }) =>
       <p><strong>Reps:</strong> {personalRecord.reps}</p>
       <p><strong>Date Achieved:</strong> {personalRecord.date_achieved}</p>
       {personalRecord.notes && <p><strong>Notes:</strong> {personalRecord.notes}</p>}
-      {isOwner && (
+      {isOwner && onEdit && onDelete && (
         <MoreDropdown
-        handleEdit={() => onEdit(personalRecord)}
-        handleDelete={handleDelete}
-      />
+          handleEdit={() => {
+            console.log("handleEdit called");
+            onEdit(personalRecord);
+          }}
+          handleDelete={handleDelete}
+        />
       )}
-      
     </Container>
   );
 };

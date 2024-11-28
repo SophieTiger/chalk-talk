@@ -7,6 +7,7 @@ import NoResults from "../../assets/no-results.png";
 import { axiosReq } from "../../api/axiosDefaults";
 
 function PersonalRecordList({ profileId, onEdit, onDelete, isOwner, mobile }) {
+    console.log("PersonalRecordList props:", { profileId, onEdit, onDelete, isOwner, mobile });
     const [records, setRecords] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
 
