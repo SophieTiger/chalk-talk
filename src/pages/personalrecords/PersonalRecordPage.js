@@ -71,7 +71,7 @@ function PersonalRecordPage() {
                 <Container className={appStyles.Content}>
                         <PersonalRecordList
                             profileId={currentUser?.profile_id}
-                            // records={records}
+                            records={records}
                             onEdit={(record) => {
                                 console.log("onEdit called with:", record);
                                 setCurrentRecord(record);
