@@ -9,10 +9,14 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 function PersonalRecordList({ profileId, onEdit, onDelete, isOwner, mobile, records, hasMore, loadMore }) {
     console.log("PersonalRecordList props:", { profileId, onEdit, onDelete, isOwner, mobile, records, hasMore, loadMore });
     const [hasLoaded, setHasLoaded] = useState(false);
+    const [initialDataLoaded, setInitialDataLoaded] = useState(false);
 
     useEffect(() => {
         const timer = setTimeout(() => {
             setHasLoaded(true);
+            if (records.length > 0) {
+                setInitialDataLoaded(true);
+            }
         }, 1000);
 
         return () => {
@@ -24,52 +28,56 @@ function PersonalRecordList({ profileId, onEdit, onDelete, isOwner, mobile, reco
         <Container
             className={`${appStyles.Content} ${mobile && "d-lg-none text-center mb-3"}`}
         >
-            <InfiniteScroll
-                dataLength={records.length}
-                next={loadMore}
-                hasMore={hasMore}
-                loader={<Asset spinner />}
-            >
-                {hasLoaded ? (
-                    records.length ? (
-                        <>
-                            <h4>Personal Records <i className="fa-solid fa-medal"></i></h4>
-                            {mobile ? (
-                                <div className="d-flex justify-content-around">
-                                    {records.slice(0, 3).map((record) => (
-                                        <PersonalRecordDisplay
-                                            key={record.id}
-                                            personalRecord={record}
-                                            onEdit={isOwner ? onEdit : null}
-                                            onDelete={isOwner ? onDelete : null}
-                                            isOwner={isOwner}
-                                            mobile
-                                        />
-                                    ))}
-                                </div>
+            {hasLoaded ? (
+                <InfiniteScroll
+                    dataLength={records.length}
+                    next={loadMore}
+                    hasMore={hasMore}
+                    loader={<Asset spinner />}
+                >
+                    {initialDataLoaded ? (
+                            records.length ? (
+                                <>
+                                    <h4>Personal Records <i className="fa-solid fa-medal"></i></h4>
+                                    {mobile ? (
+                                        <div className="d-flex justify-content-around">
+                                            {records.slice(0, 3).map((record) => (
+                                                <PersonalRecordDisplay
+                                                    key={record.id}
+                                                    personalRecord={record}
+                                                    onEdit={isOwner ? onEdit : null}
+                                                    onDelete={isOwner ? onDelete : null}
+                                                    isOwner={isOwner}
+                                                    mobile
+                                                />
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        records.map((record) => (
+                                            <PersonalRecordDisplay
+                                                key={record.id}
+                                                personalRecord={record}
+                                                onEdit={isOwner ? onEdit : null}
+                                                onDelete={isOwner ? onDelete : null}
+                                                isOwner={isOwner}
+                                            />
+                                        ))
+                                    )}
+                                </>
                             ) : (
-                                records.map((record) => (
-                                    <PersonalRecordDisplay
-                                        key={record.id}
-                                        personalRecord={record}
-                                        onEdit={isOwner ? onEdit : null}
-                                        onDelete={isOwner ? onDelete : null}
-                                        isOwner={isOwner}
-                                    />
-                                ))
-                            )}
-                        </>
-                    ) : (
-                        <Container className={appStyles.Content}>
-                            <Asset src={NoResults} message={isOwner ? "No personal records found. Create one!" : "No personal records found."} />
-                        </Container>
-                    )
+                                <Container className={appStyles.Content}>
+                                    <Asset src={NoResults} message={isOwner ? "No personal records found. Create one!" : "No personal records found."} />
+                                </Container>
+                            )
                 ) : (
-                    <Container className={appStyles.Content}>
                         <Asset spinner />
-                    </Container>
-                )}
-            </InfiniteScroll>
+                    )}
+                </InfiniteScroll>
+            ) : (
+                <Container className={appStyles.Content}>
+                    <Asset spinner />
+                </Container>
+            )}
         </Container>
     );
 }
