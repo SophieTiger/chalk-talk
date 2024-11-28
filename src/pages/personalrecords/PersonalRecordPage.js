@@ -13,23 +13,34 @@ function PersonalRecordPage() {
     const [records, setRecords] = useState([]);
     const [isEditing, setIsEditing] = useState(false);
     const [currentRecord, setCurrentRecord] = useState(null);
+    const [page, setPage] = useState(1);
+    const [hasMore, setHasMore] = useState(true);
 
     const fetchRecords = useCallback(async () => {
         if (currentUser) {
             try {
                 const { data } = await axiosReq.get('/personalrecords/', {
-                    params: { owner: currentUser.id },
+                    params: { owner: currentUser.id, page: page, limit: 10 },
                 });
-                setRecords(data.results);
+                if (page === 1) {
+                    setRecords(data.results);
+                } else {
+                    setRecords(prevRecords => [...prevRecords, ...data.results]);
+                }
+                setHasMore(data.next !== null);
             } catch (err) {
                 console.log(err);
             }
         }
-    }, [currentUser]);
+    }, [currentUser, page]);
 
     useEffect(() => {
         fetchRecords();
     }, [fetchRecords]);
+
+    const loadMoreRecords = () => {
+        setPage(prevPage => prevPage + 1);
+    };
 
     const addRecord = (newRecord) => {
         setRecords([newRecord, ...records]);
@@ -69,17 +80,19 @@ function PersonalRecordPage() {
                     </Container>
                 </Col>
                 <Container className={appStyles.Content}>
-                        <PersonalRecordList
-                            profileId={currentUser?.profile_id}
-                            records={records}
-                            onEdit={(record) => {
-                                console.log("onEdit called with:", record);
-                                setCurrentRecord(record);
-                                setIsEditing(true);
-                            }}
-                            onDelete={deleteRecord}
-                            isOwner={true}
-                        />
+                    <PersonalRecordList
+                        profileId={currentUser?.profile_id}
+                        records={records}
+                        onEdit={(record) => {
+                            console.log("onEdit called with:", record);
+                            setCurrentRecord(record);
+                            setIsEditing(true);
+                        }}
+                        onDelete={deleteRecord}
+                        isOwner={true}
+                        hasMore={hasMore}
+                        loadMore={loadMoreRecords}
+                    />
                 </Container>
             </Col>
             <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
