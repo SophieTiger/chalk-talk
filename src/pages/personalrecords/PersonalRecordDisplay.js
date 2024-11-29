@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { MoreDropdown } from '../../components/MoreDropdown';
 import appStyles from "../../App.module.css";
+import styles from "../../styles/PersonalRecordDisplay.module.css"
 
 const PersonalRecordDisplay = ({ personalRecord, onEdit, onDelete, isOwner }) => {
   console.log("PersonalRecordDisplay props:", { personalRecord, onEdit, onDelete, isOwner });
@@ -14,12 +15,12 @@ const PersonalRecordDisplay = ({ personalRecord, onEdit, onDelete, isOwner }) =>
   };
 
   return (
-    <Container className={appStyles.Content}>
+    <Container className={styles.personalRecordItem}>
       <h4>{personalRecord.exercise}</h4>
-      <p><strong>Weight:</strong> {personalRecord.weight} kg</p>
-      <p><strong>Reps:</strong> {personalRecord.reps}</p>
-      <p><strong>Date Achieved:</strong> {personalRecord.date_achieved}</p>
-      {personalRecord.notes && <p><strong>Notes:</strong> {personalRecord.notes}</p>}
+      <p>Weight: {personalRecord.weight} kg</p>
+      <p>Reps: {personalRecord.reps}</p>
+      <p>Date Achieved: {personalRecord.date_achieved}</p>
+      {personalRecord.notes && <p>Notes: {personalRecord.notes}</p>}
       {isOwner && onEdit && onDelete && (
         <MoreDropdown
           handleEdit={() => {
@@ -27,6 +28,7 @@ const PersonalRecordDisplay = ({ personalRecord, onEdit, onDelete, isOwner }) =>
             onEdit(personalRecord);
           }}
           handleDelete={handleDelete}
+          className={styles.darkMoreDropdown}
         />
       )}
     </Container>
