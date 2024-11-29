@@ -92,6 +92,7 @@ function PersonalRecordPage() {
                         isOwner={true}
                         hasMore={hasMore}
                         loadMore={loadMoreRecords}
+                        showPercentageButton={true}
                     />
                 </Container>
             </Col>

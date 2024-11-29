@@ -1,11 +1,11 @@
-import React from 'react';
-import { Container } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Container, Button, Modal } from 'react-bootstrap';
 import { MoreDropdown } from '../../components/MoreDropdown';
 import appStyles from "../../App.module.css";
 import styles from "../../styles/PersonalRecordDisplay.module.css"
 
-const PersonalRecordDisplay = ({ personalRecord, onEdit, onDelete, isOwner }) => {
-  console.log("PersonalRecordDisplay props:", { personalRecord, onEdit, onDelete, isOwner });
+const PersonalRecordDisplay = ({ personalRecord, onEdit, onDelete, isOwner, showPercentageButton }) => {
+  const [showPercentages, setShowPercentages] = useState(false);
 
   const handleDelete = () => {
     console.log("handleDelete called");
@@ -14,23 +14,51 @@ const PersonalRecordDisplay = ({ personalRecord, onEdit, onDelete, isOwner }) =>
     }
   };
 
+  const calculatePercentages = (weight) => {
+    const percentages = [105, 90, 80, 70, 60, 50, 40, 30, 20, 10];
+    return percentages.map(percent => ({
+      percent,
+      weight: Math.round(weight * (percent / 100))
+    }));
+  };
+
   return (
     <Container className={styles.personalRecordItem}>
-      <h4>{personalRecord.exercise}</h4>
+      <div className={styles.headerContainer}>
+        <h4>{personalRecord.exercise}</h4>
+        {showPercentageButton && (
+          <Button 
+            variant="outline-primary" 
+            size="sm" 
+            onClick={() => setShowPercentages(true)}
+            className={styles.percentageButton}
+          >
+            %
+          </Button>
+        )}
+      </div>
       <p>Weight: {personalRecord.weight} kg</p>
       <p>Reps: {personalRecord.reps}</p>
       <p>Date Achieved: {personalRecord.date_achieved}</p>
       {personalRecord.notes && <p>Notes: {personalRecord.notes}</p>}
       {isOwner && onEdit && onDelete && (
         <MoreDropdown
-          handleEdit={() => {
-            console.log("handleEdit called");
-            onEdit(personalRecord);
-          }}
+          handleEdit={() => onEdit(personalRecord)}
           handleDelete={handleDelete}
           className={styles.darkMoreDropdown}
         />
       )}
+
+      <Modal show={showPercentages} onHide={() => setShowPercentages(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>1 Rep Max Percentages</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {calculatePercentages(personalRecord.weight).map(({ percent, weight }) => (
+            <p key={percent}>{percent}%: {weight} kg</p>
+          ))}
+        </Modal.Body>
+      </Modal>
     </Container>
   );
 };
