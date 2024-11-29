@@ -5,6 +5,7 @@ import appStyles from "../../App.module.css";
 import Asset from "../../components/Asset";
 import NoResults from "../../assets/no-results.png";
 import InfiniteScroll from 'react-infinite-scroll-component';
+import styles from "../../styles/PersonalRecordList.module.css"
 
 function PersonalRecordList({ profileId, onEdit, onDelete, isOwner, mobile, records, hasMore, loadMore }) {
     console.log("PersonalRecordList props:", { profileId, onEdit, onDelete, isOwner, mobile, records, hasMore, loadMore });
@@ -38,7 +39,7 @@ function PersonalRecordList({ profileId, onEdit, onDelete, isOwner, mobile, reco
                     {initialDataLoaded ? (
                             records.length ? (
                                 <>
-                                    <h4>Personal Records <i className="fa-solid fa-medal"></i></h4>
+                                    <h4>Personal Records <i className={`${styles.Medal} fa-solid fa-medal`}></i></h4>
                                     {mobile ? (
                                         <div className="d-flex justify-content-around">
                                             {records.slice(0, 3).map((record) => (
