@@ -111,7 +111,7 @@ function SignInForm() {
             >
                 <Image
                     className={`${appStyles.FillerImage}`}
-                    src={"https://res.cloudinary.com/diryrandw/image/upload/v1731937736/11471665_ddiagh.png"}
+                    src={"https://res.cloudinary.com/diryrandw/image/upload/v1732886639/sign_in_logo_bcxnzc.png"}
                 />
             </Col>
         </Row>

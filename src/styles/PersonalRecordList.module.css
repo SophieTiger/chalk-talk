@@ -1,3 +1,21 @@
+.mobileRecordContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.mobileRecordItem {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 576px) {
+    .mobileRecordItem {
+        width: 32%;
+        margin-bottom: 0;
+    }
+}
+
 .Medal {
     color: #faad1ff3;
 }

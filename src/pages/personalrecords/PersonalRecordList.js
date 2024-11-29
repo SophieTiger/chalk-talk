@@ -41,16 +41,17 @@ function PersonalRecordList({ profileId, onEdit, onDelete, isOwner, mobile, reco
                                 <>
                                     <h4>Personal Records <i className={`${styles.Medal} fa-solid fa-medal`}></i></h4>
                                     {mobile ? (
-                                        <div className="d-flex justify-content-around">
+                                        <div className={styles.mobileRecordContainer}>
                                             {records.slice(0, 3).map((record) => (
+                                                 <div key={record.id} className={styles.mobileRecordItem}>
                                                 <PersonalRecordDisplay
-                                                    key={record.id}
                                                     personalRecord={record}
                                                     onEdit={isOwner ? onEdit : null}
                                                     onDelete={isOwner ? onDelete : null}
                                                     isOwner={isOwner}
                                                     mobile
                                                 />
+                                                </div>
                                             ))}
                                         </div>
                                     ) : (
