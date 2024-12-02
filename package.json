@@ -42,9 +42,6 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "msw": "^0.35.0"
-  },
   "engines": {
     "node": "16.19.1",
     "npm": "8.19.3"
