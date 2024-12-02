@@ -30,4 +30,7 @@
 
 .percentageButton {
   margin-left: 10px;
+  font-size: 0.7rem !important;
+  min-width: 40px !important;
+  padding: 2px 5px !important;
 }

@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Container, Button, Modal } from 'react-bootstrap';
 import { MoreDropdown } from '../../components/MoreDropdown';
 import appStyles from "../../App.module.css";
-import styles from "../../styles/PersonalRecordDisplay.module.css"
+import styles from "../../styles/PersonalRecordDisplay.module.css";
+import btnStyles from "../../styles/Button.module.css";
 
 const PersonalRecordDisplay = ({ personalRecord, onEdit, onDelete, isOwner, showPercentageButton }) => {
   const [showPercentages, setShowPercentages] = useState(false);
@@ -27,11 +28,11 @@ const PersonalRecordDisplay = ({ personalRecord, onEdit, onDelete, isOwner, show
       <div className={styles.headerContainer}>
         <h4>{personalRecord.exercise}</h4>
         {showPercentageButton && (
-          <Button 
-            variant="outline-primary" 
-            size="sm" 
+          <Button
+            variant="outline-primary"
+            size="sm"
             onClick={() => setShowPercentages(true)}
-            className={styles.percentageButton}
+            className={`${styles.percentageButton} ${btnStyles.Green} ${btnStyles.Button}`}
           >
             %
           </Button>
@@ -51,7 +52,7 @@ const PersonalRecordDisplay = ({ personalRecord, onEdit, onDelete, isOwner, show
 
       <Modal show={showPercentages} onHide={() => setShowPercentages(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>1 Rep Max Percentages</Modal.Title>
+          <Modal.Title>1 Rep Max Percentages {personalRecord.exercise}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {calculatePercentages(personalRecord.weight).map(({ percent, weight }) => (
