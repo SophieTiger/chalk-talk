@@ -82,6 +82,7 @@ function PostsPage({ message, filter = "", currentUser }) {
                     </Form>
                     {hasLoaded ? (
                         <>
+                            <h3>Latest posts</h3>
                             {posts.results.length ? (
                                 <InfiniteScroll
                                     children={

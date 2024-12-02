@@ -12,6 +12,11 @@
   box-shadow: 0 0 0 4px #f0f0f0, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
 }
 
+.personalRecordItem p {
+  margin-bottom: 5px;
+  line-height: 1.3;
+}
+
 .personalRecordItem .darkMoreDropdown i {
   color: #333;
 }
@@ -28,9 +33,31 @@
   align-items: center;
 }
 
+.exerciseTitle {
+  margin: 0 0 15px 0;
+}
+
 .percentageButton {
   margin-left: 10px;
   font-size: 1.2rem !important;
   min-width: 40px !important;
   padding: 2px 5px !important;
+}
+
+@media (max-width: 768px) {
+  .personalRecordItem .headerContainer {
+    position: relative;
+    justify-content: center;
+  }
+
+  .personalRecordItem .exerciseTitle {
+    text-align: center;
+    width: 100%;
+  }
+
+  .personalRecordItem .percentageButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }

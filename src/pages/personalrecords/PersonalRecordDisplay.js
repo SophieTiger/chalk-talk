@@ -9,7 +9,6 @@ const PersonalRecordDisplay = ({ personalRecord, onEdit, onDelete, isOwner, show
   const [showPercentages, setShowPercentages] = useState(false);
 
   const handleDelete = () => {
-    console.log("handleDelete called");
     if (window.confirm("Are you sure you want to delete this personal record?")) {
       onDelete(personalRecord.id);
     }
@@ -26,7 +25,7 @@ const PersonalRecordDisplay = ({ personalRecord, onEdit, onDelete, isOwner, show
   return (
     <Container className={styles.personalRecordItem}>
       <div className={styles.headerContainer}>
-        <h4>{personalRecord.exercise}</h4>
+        <h4 className={styles.exerciseTitle}>{personalRecord.exercise}</h4>
         {showPercentageButton && (
           <Button
             variant="outline-primary"
@@ -52,7 +51,7 @@ const PersonalRecordDisplay = ({ personalRecord, onEdit, onDelete, isOwner, show
 
       <Modal show={showPercentages} onHide={() => setShowPercentages(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>1 Rep Max Percentages {personalRecord.exercise}</Modal.Title>
+          <Modal.Title>1 Rep Max Percentages: {personalRecord.exercise}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {calculatePercentages(personalRecord.weight).map(({ percent, weight }) => (
