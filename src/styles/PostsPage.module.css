@@ -1,3 +1,45 @@
+.heroSection {
+  position: relative;
+  height: 50vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.heroText h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.heroText p {
+  font-size: 1.5rem;
+}
+
+.heroLink {
+  color: #faad1ff3;
+  text-decoration: none;
+}
+
+.heroLink:hover {
+  color: #faad1ff3;
+  font-weight: bold;
+}
+
 .SearchBar input {
     border-radius: 20px;
     color: #242a3d;

@@ -33,7 +33,10 @@ function App() {
             exact
             path="/"
             render={() => (
-              <PostsPage message="No results found. Please try another search keyword." />
+              <PostsPage
+                message="No results found. Please try another search keyword."
+                currentUser={currentUser}
+              />
             )}
           />
           <Route
@@ -43,6 +46,7 @@ function App() {
               <PostsPage
                 message="No results found. Please try another search keyword or follow a new friend."
                 filter={`owner__followed__owner__profile=${profile_id}&`}
+                currentUser={currentUser}
               />
             )}
           />
