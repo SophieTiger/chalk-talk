@@ -15,7 +15,7 @@
 }
 
 .FillerImage {
-  object-fit: cover;
+  object-fit: contain;
   height: 100%;
   width: 100%;
 }
@@ -78,4 +78,11 @@ figure {
 }
 *::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .FillerImage {
+    max-width: 100%;
+    height: auto;
+  }
 }

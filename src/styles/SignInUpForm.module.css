@@ -39,9 +39,19 @@
   }
   
   .SignInCol {
-    height: 320px;
+    height: 550px;
   }
   
   .SignUpCol {
-    height: 375px;
+    height: 500px;
+  }
+
+  @media (max-width: 991px) and (min-width: 768px) {
+    .SignInCol {
+      height: auto;
+      /* max-height: 450px; */
+    }
+    .SignUpCol {
+      height: auto;
+    }
   }
