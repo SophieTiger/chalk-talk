@@ -1,11 +1,9 @@
+<p align="center">
+  <img src="./src/assets/chalk_logo.png" alt="Chalk Talk Logo" width="200"/>
+</p>
 
+# Welcome
+Welcome to Chalk Talk, a comprehensive fitness and wellness platform designed to promote a healthy and active lifestyle. Chalk Talk connects individuals and fitness enthusiasts in a warm and inspiring community, providing tools and inspiration to help them achieve their fitness goals. 
+The platform offers a variety of features to support your fitness journey, including personal records tracking, weight load calculation and community interaction. Whether you are looking to improve your fitness, track your personal records, or engage with a supportive community, Chalk Talk is your go-to destination.
 
-
-## Bugs
--   The issue was I moved the fetching of records into the PersonalRecordList component, which was causing it to always fetch all records regardless of the user profile being viewed. To fix this, I needed to pass the user ID to the PersonalRecordList and use it in the API call.
-
--   Bug on PersonalRecordPage when fetching the personal records for the owner and logged in user making a text from a ternary from the PersonalRecordPage display before the loading spinner.
-Solution: Making the PersonalRecordList component handle all states (loading, empty, and populated) without interference from PersonalRecordPage. This approach is more consistent and avoids the premature display of the "no records" message.
-
--   Bug on profile page briefly flashing No results before personal records list is shown.
-Solution: Add new state variable, initialDataLoaded, setInitialDataLoaded, to track whether the initial data has been loaded. Then update the useEffect hook to set this state when the initial data is loaded and modify the return statement to use this new state with initialDataLoaded ?
+Chalk Talk focuses on leveraging the latest web technologies, including React for the frontend and Django for the backend, ensuring a seamless and engaging user experience. It is designed for anyone passionate about fitness, from beginners to advanced athletes.
