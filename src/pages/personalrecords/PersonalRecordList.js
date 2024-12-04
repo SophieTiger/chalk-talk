@@ -14,11 +14,9 @@ function PersonalRecordList({ profileId, onEdit, onDelete, isOwner, mobile, reco
     useEffect(() => {
         const timer = setTimeout(() => {
             setHasLoaded(true);
-            if (records.length > 0) {
-                setInitialDataLoaded(true);
-            }
+            setInitialDataLoaded(true);
         }, 1000);
-
+    
         return () => {
             clearTimeout(timer);
         };

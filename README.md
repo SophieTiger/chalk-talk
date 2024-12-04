@@ -110,6 +110,8 @@ Chalk Talk is designed with a user-centric approach, ensuring that the platform 
 By focusing on these key aspects of the user experience, Chalk Talk aims to provide a platform that is not only functional but also enjoyable to use, encouraging users to stay active, engaged, and motivated in their fitness journey.
 
 # Design
+## Logo and Branding
+The logo of Chalk Talk, containing barbells and weight plates and chalky stamp with the Chalk Talk text provides a strong visual identity for the brand.
 
 # Project Planning
 ## Strategy plane
