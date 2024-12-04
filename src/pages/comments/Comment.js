@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Media from 'react-bootstrap/Media';
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
 import styles from "../../styles/Comment.module.css";
@@ -22,18 +24,22 @@ const Comment = (props) => {
     } = props;
 
     const [showEditForm, setShowEditForm] = useState(false);
+    const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
     const currentUser = useCurrentUser();
     const is_owner = currentUser?.username === owner;
 
-    const handleDelete = async () => {
+    const handleDelete = () => {
+        setShowDeleteConfirmation(true);
+    };
+
+    const confirmDelete = async () => {
         try {
             await axiosRes.delete(`/comments/${id}/`);
             setPost(prevPost => ({
                 results: [{
                     ...prevPost.results[0],
                     comments_count: prevPost.results[0].comments_count - 1,
-                },
-                ],
+                }],
             }));
 
             setComments((prevComments) => ({
@@ -41,7 +47,9 @@ const Comment = (props) => {
                 results: prevComments.results.filter((comment) => comment.id !== id),
             }));
         } catch (err) {
-
+            console.log(err)
+        } finally {
+            setShowDeleteConfirmation(false);
         }
     };
 
@@ -77,6 +85,23 @@ const Comment = (props) => {
                     />
                 )}
             </Media>
+
+            <Modal show={showDeleteConfirmation} onHide={() => setShowDeleteConfirmation(false)}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Confirm Deletion</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    Are you sure you want to delete this comment?
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={() => setShowDeleteConfirmation(false)}>
+                        Cancel
+                    </Button>
+                    <Button variant="danger" onClick={confirmDelete}>
+                        Delete
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </>
     );
 };
