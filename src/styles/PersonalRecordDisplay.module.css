@@ -50,10 +50,10 @@
     justify-content: center;
   }
 
-  .personalRecordItem .exerciseTitle {
+  /* .personalRecordItem .exerciseTitle {
     text-align: center;
     width: 100%;
-  }
+  } */
 
   .personalRecordItem .percentageButton {
     position: absolute;

@@ -9,12 +9,12 @@
     margin-bottom: 10px;
 }
 
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
     .mobileRecordItem {
         width: 32%;
         margin-bottom: 0;
     }
-}
+} */
 
 .Medal {
     color: #faad1ff3;
