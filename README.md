@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./src/assets/chalk_logo.png" alt="Chalk Talk Logo" width="200"/>
+  <img src="./src/assets/chalk_logo_white.png" alt="Chalk Talk Logo" width="200"/>
 </p>
 
 # Welcome
@@ -110,8 +110,19 @@ Chalk Talk is designed with a user-centric approach, ensuring that the platform 
 By focusing on these key aspects of the user experience, Chalk Talk aims to provide a platform that is not only functional but also enjoyable to use, encouraging users to stay active, engaged, and motivated in their fitness journey.
 
 # Design
-## Logo and Branding
+## Logo and Branding - add logo
 The logo of Chalk Talk, containing barbells and weight plates and chalky stamp with the Chalk Talk text provides a strong visual identity for the brand.
+
+## Colors
+-   **Orange:** Represents energy and enthusiasm. Used for highlights. #faad1ff3 and goldenrod
+-   **Green:** Represents health and vitality. Used for buttons. #308017
+-   **White:** Used for backgrounds and text to provide contrast and readability. #FFFFFF
+-   **Black:** Used for text to provide contrast. #333
+-   **Red:** Used for heart icons to like and unlike posts. #f85032
+-   **Gray:** Different gray scales used throughout the application to provide contrast.
+
+## Fonts
+Chalk Talk utilizes two primary fonts from Google Fonts: **Montserrat** and **Permanent Marker**. Montserrat was chosen for it's readability and modern appearance and Permanent Marker to give a handwritten feeling on chalk board. Both align with the application's theme of fitness, playfulness and well-being.
 
 # Project Planning
 ## Strategy plane

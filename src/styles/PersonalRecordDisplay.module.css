@@ -47,7 +47,7 @@
 @media (max-width: 768px) {
   .personalRecordItem .headerContainer {
     position: relative;
-    justify-content: center;
+    /* justify-content: center; */
   }
 
   /* .personalRecordItem .exerciseTitle {
