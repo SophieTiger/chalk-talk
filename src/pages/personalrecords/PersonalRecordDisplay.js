@@ -7,12 +7,16 @@ import btnStyles from "../../styles/Button.module.css";
 
 const PersonalRecordDisplay = ({ personalRecord, onEdit, onDelete, isOwner, showPercentageButton }) => {
   const [showPercentages, setShowPercentages] = useState(false);
+  const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
 
   const handleDelete = () => {
-    if (window.confirm("Are you sure you want to delete this personal record?")) {
-      onDelete(personalRecord.id);
-    }
+    setShowDeleteConfirmation(true);
   };
+  
+  const confirmDelete = () => {
+    onDelete(personalRecord.id);
+    setShowDeleteConfirmation(false);
+  }
 
   const calculatePercentages = (weight) => {
     const percentages = [105, 90, 80, 70, 60, 50, 40, 30, 20, 10];
@@ -48,6 +52,23 @@ const PersonalRecordDisplay = ({ personalRecord, onEdit, onDelete, isOwner, show
           className={styles.darkMoreDropdown}
         />
       )}
+
+      <Modal show={showDeleteConfirmation} onHide={() => setShowDeleteConfirmation(false)}>
+      <Modal.Header closeButton>
+          <Modal.Title>Confirm Deletion</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Are you sure you want to delete this personal record?
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowDeleteConfirmation(false)}>
+            Cancel
+          </Button>
+          <Button variant="danger" onClick={confirmDelete}>
+            Delete
+          </Button>
+        </Modal.Footer>
+      </Modal>
 
       <Modal show={showPercentages} onHide={() => setShowPercentages(false)}>
         <Modal.Header closeButton>
