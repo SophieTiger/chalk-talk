@@ -280,11 +280,18 @@ I've used [Balsamiq](https://balsamiq.cloud/) to design the site wireframes.
 
 </details>
 
+<details>
+<summary>Click here to View <stong>Add Post</strong> wireframes</summary>
+
+![Alt text](path/to/your/image.jpg)
+
+</details>
+
 ### Database Schema - ERD
 I've used [Lucidchart](https://www.lucidchart.com/pages/) to design  the ERD
 
 The Chalk Talk application is structured on a robust database schema designed to facilitate the efficient organization and retrieval of data. Below is an overview of the database schema and the relationships between the different entities.
-The Database Models presented in Blue color are the ones that have been implemented in the project. The light orange ones, Program and Booking, have not been implemented but was in the scope from the beginning and then taken out due to lack of time. They are still in the diagram though because I think of them as future features to implement.
+The Database Models presented in Blue color are the ones that have been implemented in the project. The light orange ones, Program and Booking, have not been implemented but was in the scope from the beginning and then taken out due to lack of time. They are still in the diagram though because I think of them as future features to implement and this is the relationships and content they would have.
 
 ![Entity Relationship Diagram](./readme/erd.png)
 
