@@ -21,10 +21,9 @@ Chalk Talk focuses on leveraging the latest web technologies, including React fo
 - [Project Planning](#project-planning)
     -   [Strategy plane](#strategy-plane)
     -   [Agile Methodologies](#agile-methodologies)
-        -   [Story Points Allocation](#story-points-allocation)
         -   [Sprint Planning](#sprint-planning)
         -   [MoSCoW Prioritization](#moscow-prioritization)
-        -   [User Stories, Milestones, and Epics](#user-stories-milestones-and-epics)
+        -   [User Stories](#user-stories)
     -   [Scope plane](#scope-plane)
     -   [Structural plane](#structural-plane)
     -   [Skeleton & Surface Planes](#skeleton--surface-planes)
@@ -110,7 +109,7 @@ Chalk Talk is designed with a user-centric approach, ensuring that the platform 
 By focusing on these key aspects of the user experience, Chalk Talk aims to provide a platform that is not only functional but also enjoyable to use, encouraging users to stay active, engaged, and motivated in their fitness journey.
 
 # Design
-## Logo and Branding - add logo
+## Logo and Branding ![Chalk Talk Logo](./src/assets/chalk_logo_white.png)
 The logo of Chalk Talk, containing barbells and weight plates and chalky stamp with the Chalk Talk text provides a strong visual identity for the brand.
 
 ## Colors
@@ -126,11 +125,55 @@ Chalk Talk utilizes two primary fonts from Google Fonts: **Montserrat** and **Pe
 
 # Project Planning
 ## Strategy plane
+**Overview:**
+Chalk Talk is a versatile platform created for fitness enthusiasts to document their daily workouts and personal records, discuss fitness and health, and share thoughts and inspiration around training. Acting as a communal hub, it allows users to interact, inspire each other, and stay dedicated to their fitness objectives. Utilizing the latest web technologies, Chalk Talk provides a smooth user experience on all devices.
+
+**Goals:**
+-   Offer a comprehensive resource for fitness enthusiasts to share experiences, wins and thoughts, and discuss fitness.
+-   Cultivate a community where users can connect, motivate, and support one another.
+-   Ensure a user-friendly interface that is accessible and easy to navigate.
+
+**Audience:**
+-   Users interested in sharing their fitness journeys and engaging with a supportive community.
+-   Athletes seeking a tool to document personal records and make use of a percentage calculator in their daily workout routine.
+
+**User Needs:**
+-   Ability to interact with other community members through comments, likes, and follows.
+-   Ability to express the level of CrossFit experience and write a bio to let other users know more about the athlete.
+-   Ability to document personal records to keep track of them and to utilize that data for calculation of weight in daily workouts.
+-   Ability to view other users personal records for inspiration.
+
+**Features:**
+-   Post upload functionality to share content related to fitness.
+-   Community interaction through comments, likes, and follows.
+-   User profiles for personalized experiences.
+-   Personal Record documentation and percentage calculator.
+
+
 ## Agile Methodologies
-### Story Points Allocation
+This project was developed using Agile methodology which allowed me to iteratively and incrementally build my app, with flexibility to make changes to my design throughout the entire development process.
+
+GitHub Issues and Projects were used to manage the development process. The board view of the Project feature was used to display and manage my progress in the form of a 'kanban board'. The user stories were added to the 'Todo' column to be prioritised for development, moved to the 'In Progress' column to indicate development of the feature had begun and finally moved to the 'Done' column when the feature had been implemented and the acceptance criteria had been met.
+
 ### Sprint Planning
+The project was divied into six sprints using Milestones in GitHub Projects. This rapid sprint approach allowed me to break down the project into manageable chunks and maintain focus on delivering key features and functionality on time.
+![Sprint planning](./readme/sprints.png)
+
 ### MoSCoW Prioritization
-### User Stories, Milestones, and Epics
+-   **Must Haves:** the 'required', critical components of the project. Completing my 'Must Haves' helped me to reach the MVP (Minimum Viable Product) for this project.
+-   **Should Haves:** the components that are valuable to the project but not absolutely 'vital'. The 'Must Haves' must receive priority over the 'Should Haves'.
+-   **Could Haves:** these are the features that are a 'bonus' to the project, it would be nice to have them in this phase, but only if the most important issues have been completed first and time allows.
+-   **Won't Haves:** the features or components that either no longer fit the project's brief, get taken out of the scope or are of very low priority for this release.
+
+### User Stories
+To start with I created a sheet with all the user stories that I wanted to cover, before moving them to issues in the Github Project Kanban board. This is a little bit of that sheet:
+![User stories sheet](./readme/user_stories.png)
+
+Here is a link to the [Kanban Board](https://github.com/users/SophieTiger/projects/5) where all user stories can be viewed.
+
+**User stories that was taken out of scope**
+During development the features for adding, viewing and booking programs was taken out of scope and prioritization was changed to "Won't have". This was due to lack of time and those features has been added to potential future features for the project.
+
 
 ## Scope plane
 ## Structural plane
@@ -158,6 +201,8 @@ Chalk Talk utilizes two primary fonts from Google Fonts: **Montserrat** and **Pe
 #### Percentage count of 1 rep max
 #### Error Handling
 ## Future Features
+-   Add programs for Personal training, Bootcamps and Nutrition Coaching to the app according to business needs.
+-   Add Notifications to let users know when interaction was made to their content, such as likes and comments.
 
 # Reusable React Components
 
