@@ -8,7 +8,8 @@ The platform offers a variety of features to support the fitness journey, includ
 
 Chalk Talk focuses on leveraging the latest web technologies, including React for the frontend and Django for the backend, ensuring a seamless and engaging user experience. It is designed for anyone passionate about fitness, from beginners to advanced athletes.
 
-### Am I responsive image
+![Responsive website](./readme/am_i_responsive.png)
+
 [Chalk Talk Live website](https://chalk-talk-react-444e4f93c93c.herokuapp.com/)
 
 # Table of Contents
@@ -109,8 +110,10 @@ Chalk Talk is designed with a user-centric approach, ensuring that the platform 
 By focusing on these key aspects of the user experience, Chalk Talk aims to provide a platform that is not only functional but also enjoyable to use, encouraging users to stay active, engaged, and motivated in their fitness journey.
 
 # Design
-## Logo and Branding ![Chalk Talk Logo](./src/assets/chalk_logo_white.png)
+## Logo and Branding 
 The logo of Chalk Talk, containing barbells and weight plates and chalky stamp with the Chalk Talk text provides a strong visual identity for the brand.
+
+![Chalk Talk Logo](./src/assets/chalk_logo_white.png)
 
 ## Colors
 -   **Orange:** Represents energy and enthusiasm. Used for highlights. #faad1ff3 and goldenrod
@@ -157,7 +160,10 @@ GitHub Issues and Projects were used to manage the development process. The boar
 
 ### Sprint Planning
 The project was divied into six sprints using Milestones in GitHub Projects. This rapid sprint approach allowed me to break down the project into manageable chunks and maintain focus on delivering key features and functionality on time.
+
 ![Sprint planning](./readme/sprints.png)
+
+[Chalk Talk Milestones Link](https://github.com/SophieTiger/chalk-talk-api/milestones)
 
 ### MoSCoW Prioritization
 -   **Must Haves:** the 'required', critical components of the project. Completing my 'Must Haves' helped me to reach the MVP (Minimum Viable Product) for this project.
@@ -172,11 +178,89 @@ To start with I created a sheet with all the user stories that I wanted to cover
 Here is a link to the [Kanban Board](https://github.com/users/SophieTiger/projects/5) where all user stories can be viewed.
 
 **User stories that was taken out of scope**
-During development the features for adding, viewing and booking programs was taken out of scope and prioritization was changed to "Won't have". This was due to lack of time and those features has been added to potential future features for the project.
+During development the features for adding, viewing and booking programs was taken out of scope and prioritization was changed to "Won't have". This was due to lack of time and those features has been added to potential future features for the project. Issues were closed as "not planned".
 
 
 ## Scope plane
+The scope plane defines the specific features and functionalities that Chalk Talk will offer. It outlines what the application will do to meet user needs and the business goals.
+
+**Features and Functionalities**
+-   **User Management**
+    -   User Registration: Allow users to create an account to take part in the community and track their personal records.
+    -   Secure User Login: Enable users to log in securely to access personal data and interact with the site.
+    -   Profile Customization: Let users customize their profiles to express themselves and manage their profile.
+    -   Editable User Profiles: Provide users with the ability to edit their profiles to update their information.
+
+-   **Social Interaction and Community**
+    -   Posting Content: Allow users to share their fitness progress with the community.
+    -   Commenting on Posts: Enable users to comment on posts to engage with the community.
+    -   Liking Posts: Let users like posts to show appreciation for the content.
+    -   Following Other Users: Allow users to follow others to stay updated with their activities.
+
+-   **Personal Records and the display**
+    -   Create Personal Records: Users can create personal records to keep track of them.
+    -   Edit/Delete Personal Records: Uusers can edit or delete Personal Records to manage them effectively.
+    -   View Personal Records: Users can view their own and other users Personal Records.
+    -   **Filtering Personal Records**: Users can filter and search Personal Records by exercise if there are many in the list.
+    -   Count percentages based on Personal Records: Users can use the functionality in the PR's page by clicking the percentage sign on each personal record to get percentages on that specific exercise based on what they have logged.
+
+-   **Platform Navigation and User Experience**
+    -   Pre-login Homepage Viewing: Visitors can view the homepage to understand the platform before logging in.
+    -   Dynamic Navigation Bar: The navigation bar updates dynamically based on the user's login status.
+    -   Seamless Routing: Ensure smooth navigation throughout the app.
+    -   Enhanced Navigation & Authentication: Provide a streamlined user experience for accessing and using the platform.
+
+-   **Testing and Deployment**
+    -   Thorough Testing: Conduct comprehensive testing to ensure the application's reliability.
+    -   Documentation: Provide clear documentation to enhance understanding for developers and users.
+    -   Application Deployment: Deploy the application to a live environment, ensuring stability and correctness.
+
 ## Structural plane
+The structural plane outlines the organization and hierarchy of information within Chalk Talk. It defines how the features and functionalities are structured and how users will interact with them.
+
+**Information Architecture**
+
+-   **Home Page:**
+    -   Overview of the platform
+    -   Prompted access to sign in and sign up
+    -   Preview of featured posts and popular profiles
+
+-   **User Authentication:**
+    -   Login Page: Secure login form
+    -   Registration Page: User registration form
+
+-   **User Profile:**
+    -   Profile customization options
+    -   View and edit profile information
+    -   Display of user's posts, followers and following
+    -   Display of user's personal records
+
+-   **Social Interaction:**
+    -   Add Post Page: Create or edit a post
+    -   Home Page: View posts from all users in the community
+    -   Friends Feed: View posts from followed users
+    -   Post Detail Page: View detailed post content, comment, and likes
+
+-   **Personal Records:**
+    -   Personal Records Listing Page: Browse, Create and filter personal records
+    -   Personal Records Create: Create new personal record by filling in the form on the PR's page
+    -   Personal Records individual display: Browse specific PR and click percentage button to make use of the percentage calculator for that specific personal record
+    -   Personal Records Edit/Delete: Edit or delete personal records by clicking the dropdown menu on the specific Personal Record to manage it
+
+**Navigation Structure**
+
+-   **Top Navigation bar**
+    -   Home
+    -   Add Post (dynamic, shows when logged in)
+    -   Friends Feed (dynamic, shows when logged in)
+    -   PR's (dynamic, shows when logged in)
+    -   Profile (dynamic, shows when logged in)
+    -   Sign out (dynamic, shows when logged in)
+    -   Sign In (dynamic, shows when NOT logged in)
+    -   Sign Up (dynamic, shows when NOT logged in)
+
+This structure ensures that users can easily navigate through the platform, find relevant information, and interact with the community effectively. The combination of the scope and structural planes provides a comprehensive blueprint for developing and organizing Chalk Talk.
+
 ## Skeleton & Surface Planes
 ### Wireframes
 ### Database Schema - ERD
