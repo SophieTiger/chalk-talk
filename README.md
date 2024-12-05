@@ -263,8 +263,71 @@ This structure ensures that users can easily navigate through the platform, find
 
 ## Skeleton & Surface Planes
 ### Wireframes
+I've used [Balsamiq](https://balsamiq.cloud/) to design the site wireframes.
+
+**Home Page**
+<details>
+<summary>Click here to View Home Page wireframes</summary>
+
+![Alt text](path/to/your/image.jpg)
+
+</details>
+
+<details>
+<summary>Click here to View Home Page after Login wireframes</summary>
+
+![Alt text](path/to/your/image.jpg)
+
+</details>
+
 ### Database Schema - ERD
+I've used [Lucidchart](https://www.lucidchart.com/pages/) to design  the ERD
+
+The Chalk Talk application is structured on a robust database schema designed to facilitate the efficient organization and retrieval of data. Below is an overview of the database schema and the relationships between the different entities.
+The Database Models presented in Blue color are the ones that have been implemented in the project. The light orange ones, Program and Booking, have not been implemented but was in the scope from the beginning and then taken out due to lack of time. They are still in the diagram though because I think of them as future features to implement.
+
+![Entity Relationship Diagram](./readme/erd.png)
+
+#### Tables Overview
+
+-   **User:** Stores information about the users of the platform, including username, email, and password.
+
+-   **Profile:** Contains extended user information such as name, created date, and personal details such as bio, image and crossfit experience. This table extends the User table by associating profiles with user accounts.
+
+-   **Post:** Stores posts created by users, including the post content, associated media, creation date, and the user who created the post.
+
+-   **Comment:** Enables community interaction by storing comments made by users on posts. Each comment is linked to a specific post and user.
+
+-   **Like:** Records likes given by users to posts, tracking which user liked which post.
+
+-   **Follower:** Tracks the relationships between users, allowing one user to follow another.
+
+-   **Personal Record**: Central to the application, the Personal Record table holds data about Personal Records achieved and are added by the user. Personal Records include exercise, weight, reps, date achieved and notes.
+
+#### Relationships
+
+-   A **one-to-one** relationship exists between User and Profile, where one user can have only one Profile 
+-   A **one-to-many** relationship exists between User and PersonalRecord, where one user can have many personal ecords.
+-   A **one-to-many** relationship exists between User and Post, where one user can create many posts.
+-   A **one-to-many** relationship exists between Post and Comment, where one post can have many comments.
+-   A **one-to-many** relationship exists between User and Comment, where one user can create many comments.
+-   A **one-to-many** relationship exists between Post and Like, where one post can have many likes.
+-   A **one-to-many** relationship exists between User and Like, where one user can like many posts.
+-   A **one-to-many** relationship exists between User and Follower, where one user can follow many users.
+
+
 ### Security
+Security is a critical aspect, especially for a platform like Chalk Talk that handles user-generated content and personal data.
+
+#### Data encryption
+-   All sensitive data, including user passwords and personal information, are encrypted using robust encryption methods to protect against unauthorized access and breaches.
+
+#### Django AllAuth
+-   Django AllAuth is an installable framework that handles the user registration and authentication process. Authentication is essential to determine when a user is registered or unregistered and to control what content is accessible on Chalk Talk.
+
+#### API Security
+-   The backend uses Django REST framework (DRF) for building the API, with token-based authentication to ensure secure access to the API endpoints.
+-   Only authenticated users can perform actions like creating posts and personal records, commenting, liking, following and updating profiles.
 
 # Features
 ## Existing Features
