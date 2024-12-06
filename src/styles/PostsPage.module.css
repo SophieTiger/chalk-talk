@@ -33,11 +33,12 @@
 .heroLink {
   color: #faad1ff3;
   text-decoration: none;
+  font-weight: bold;
 }
 
 .heroLink:hover {
-  color: #faad1ff3;
-  font-weight: bold;
+  color: rgb(213, 118, 3);
+  text-decoration: underline;
 }
 
 .SearchBar input {

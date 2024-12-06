@@ -280,8 +280,49 @@ I've used [Balsamiq](https://balsamiq.cloud/) to design the site wireframes.
 
 </details>
 
+**Add Post**
 <details>
-<summary>Click here to View <stong>Add Post</strong> wireframes</summary>
+<summary>Click here to View Add Post wireframes</summary>
+
+![Alt text](path/to/your/image.jpg)
+
+</details>
+
+**Friends Feed**
+<details>
+<summary>Click here to View Friends Feed wireframes</summary>
+
+![Alt text](path/to/your/image.jpg)
+
+</details>
+
+**PR's**
+<details>
+<summary>Click here to View PR's wireframes</summary>
+
+![Alt text](path/to/your/image.jpg)
+
+</details>
+
+**Profile page**
+<details>
+<summary>Click here to View Profile page wireframes</summary>
+
+![Alt text](path/to/your/image.jpg)
+
+</details>
+
+**Sign Up**
+<details>
+<summary>Click here to View Sign Up wireframes</summary>
+
+![Alt text](path/to/your/image.jpg)
+
+</details>
+
+**Sign In**
+<details>
+<summary>Click here to View Sign In wireframes</summary>
 
 ![Alt text](path/to/your/image.jpg)
 
@@ -339,23 +380,34 @@ Security is a critical aspect, especially for a platform like Chalk Talk that ha
 # Features
 ## Existing Features
 ### Features Functionality
+![Features functionality](./readme/features_functionality.png)
 ### CRUD Functionality
+The table below describes the CRUD operations that can be performed on Chalk Talk's main features by a registered, logged-in user.
+![CRUD functionality](./readme/crud_functionality.png)
+
 ### All Existing Features with Screenshots
 #### Home Page
-#### User Registration, Login
-#### User Profile
+-   The first contact with Chalk Talk is the Home page where the user immediately gets am understading of the purpose of the site. The Hero image with a gym setting, people talking, and a text clearly explaining why users should sign up or sign in is aiming to attract new users to the community.
+**Home page for non logged in users**
+![Home page](./readme/homepage.png)
+
+**Home page for logged in users**
+![Home page logged in users](./readme/homepage_logged_in.png)
+
 #### Search Functionality
+#### Sign Up page
+#### Sign In page
 #### Responsive Navigation Bar
 #### Add Posts
 #### Comments
-#### My Posts
-#### My Feed
-#### Add Personal records
-#### My Personal records
+#### Friends Feed
+#### Personal records page
 #### Percentage count of 1 rep max
+#### Profile page
 #### Error Handling
 ## Future Features
 -   Add programs for Personal training, Bootcamps and Nutrition Coaching to the app according to business needs.
+-   Add booking functionality for programs.
 -   Add Notifications to let users know when interaction was made to their content, such as likes and comments.
 
 # Reusable React Components

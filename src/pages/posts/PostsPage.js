@@ -59,7 +59,7 @@ function PostsPage({ message, filter = "", currentUser }) {
                         <h1>Welcome to Chalk Talk!</h1>
                         <p>
                             <Link to="/signup" className={styles.heroLink}>Sign up</Link> or{' '}
-                            <Link to="/signin" className={styles.heroLink}>Sign in</Link> to join our vibrant community and share your progress
+                            <Link to="/signin" className={styles.heroLink}>Sign in</Link> to connect with our vibrant fitness community, share your journey, inspire others, and track your progress with personalized tools!
                         </p>
                     </div>
                 </div>
