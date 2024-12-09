@@ -8,7 +8,7 @@ The platform offers a variety of features to support the fitness journey, includ
 
 Chalk Talk focuses on leveraging the latest web technologies, including React for the frontend and Django for the backend, ensuring a seamless and engaging user experience. It is designed for anyone passionate about fitness, from beginners to advanced athletes.
 
-![Responsive website](./readme/am_i_responsive.png)
+![Responsive website](./readme/responsive_media.png)
 
 [Chalk Talk Live website](https://chalk-talk-react-444e4f93c93c.herokuapp.com/)
 
@@ -475,6 +475,31 @@ The navigation bar provides easy access to all sections of the site, adjusts for
 -   Add the option for users to delete their own profile.
 
 # Reusable React Components
+In the Chalk Talk application, several reusable components were developed or imported to maintain consistency, improve efficiency, and ensure scalability. Below is an overview of some key reusable components used throughout the application:
+
+### Custom components
+**NavBar**
+-   Purpose: Main navigation component
+-   Usage: `<NavBar />`
+-   Examples: Main navigation bar, mobile navigation menu.
+
+**Asset**
+-   Purpose: Displays loading spinner or image
+-   Usage: `<Asset spinner /> or <Asset src={NoResults} />`
+-   Examples: Shows when content is loading and if no results found, an image is shown.
+
+**MoreDropdown**
+-   Purpose: Dropdown menu for editing and deleting
+-   Usage: `<MoreDropdown handleEdit={editFunction} handleDelete={deleteFunction} />`
+-   Examples: Shown as three dots menu on posts, profile and personal records.
+
+**Avatar**
+-   Purpose: Displays user avatar
+-   Usage: `<Avatar src={image} height={imageSize} />`
+-   Examples: Shown in the profile as a placeholder image if no profile picture.
+
+
+
 
 # Technology Used
 ## Frontend
