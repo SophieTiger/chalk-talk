@@ -477,7 +477,7 @@ The navigation bar provides easy access to all sections of the site, adjusts for
 # Reusable React Components
 In the Chalk Talk application, several reusable components were developed or imported to maintain consistency, improve efficiency, and ensure scalability. Below is an overview of some key reusable components used throughout the application:
 
-### Custom components
+## Custom components
 **NavBar**
 -   Purpose: Main navigation component
 -   Usage: `<NavBar />`
@@ -503,8 +503,7 @@ In the Chalk Talk application, several reusable components were developed or imp
 -   Usage: `<NotFound />`
 -   Examples: Custom error page for 404 error message
 
-### Imported components from react-bootstrap
-
+## Imported components from react-bootstrap
 **Button**
 -   Purpose: Buttons for user actions
 -   Usage: The Button component is used across various forms and modal dialogs to handle user actions such as submitting forms, confirming actions, and navigating through the application. 
@@ -528,20 +527,48 @@ In the Chalk Talk application, several reusable components were developed or imp
 # Technology Used
 ## Frontend
 -   [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5): Structure of the web pages.
--   CSS3: Styling of the web content.
--   JavaScript: Enhancements of interactivity and web behaviors.
--   React: JavaScript library for building user interfaces.
--   React Bootstrap: The most popular front-end framework rebuilt for React. Provides a variety of reusable components for responsive web design.
--   React Router: A collection of navigational components that compose declaratively with your application.
--   Axios: A promise-based HTTP client for making requests to the backend API.
+-   [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS): Styling of the web content.
+-   [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript): Enhancements of interactivity and web behaviors.
+-   [React](https://reactjs.org/): JavaScript library for building user interfaces.
+-   [React Bootstrap](https://react-bootstrap.github.io/): The most popular front-end framework rebuilt for React. Provides a variety of reusable components for responsive web design.
+-   [React Router](https://reactrouter.com/): A collection of navigational components that compose declaratively with your application.
+-   [Axios](https://axios-http.com/): A promise-based HTTP client for making requests to the backend API.
 
 ## Backend
+-   [Django](https://www.djangoproject.com/): A high-level Python web framework.
+-   [Django REST Framework (DRF)](https://www.django-rest-framework.org/): Toolkit for building Web APIs with Django.
+-   [Python](https://www.python.org/): Backend programming language.
+-   [SQLite](https://www.sqlite.org/index.html) (Development) database system
+-   [PostgreSQL](https://www.postgresql.org/) (Production) database system
+
 ## Deployment and Version Control
+-   [Git](https://git-scm.com/): Used for version control.
+-   [GitHub](https://github.com/): Hosts the repository and facilitates version control and collaboration.
+-   [Heroku](https://www.heroku.com/): Platform as a service (PaaS) for deploying applications.
+-   [Cloudinary](https://cloudinary.com/): Media management and optimization.
+
 ## Development Tools
+-   [GitPod](https://www.gitpod.io/): Preferred IDE for writing and editing code.
+-   [Django AllAuth](https://django-allauth.readthedocs.io/en/latest/): Integrated set of Django applications addressing authentication, registration and account management.
+-   [Balsamiq](https://balsamiq.com/): Used for creating wireframes and mockups.
+-   [Lucidchart](https://www.lucidchart.com/pages/): Used to design site's ERD.
+
 ## Security
+-   [Django AllAuth](https://django-allauth.readthedocs.io/en/latest/): For user registration and account management.
+-   **Data Encryption**: All sensitive data, including user passwords and personal information, are encrypted using robust encryption methods.
+
 ## Others
+-   [React Infinite Scroll Component](https://www.npmjs.com/package/react-infinite-scroll-component): A simple React component to handle infinite scroll for large datasets.
+-   **Custom hooks**:
+    -   The **useRedirect** hook manages user authentication redirects. It attempts to refresh the authentication token and redirects users based on their login status, either to the home page if logged in or out as specified.
+    -   The **useClickOutsideToggle** hook handles the toggling of a component (like a dropdown) and closes it when clicking outside. It returns an expanded state, a function to set this state, and a ref to attach to the component being controlled.
+-   [Font Awesome](https://fontawesome.com/): A popular icon set and toolkit used to add icons the project.
+-   [Favicon.io](https://favicon.io/): To generate favicon icons for the website.
+-   [Tiny Png](https://tinypng.com/): To compress the images.
+-   [Birme.net](https://www.birme.net/?target_width=100&auto_height=true): To change size of images.
 
 # Testing & Validation
+For all testing and validation, please refer to the [TESTING.md](/TESTING.md) file.
 
 # Deployment
 ## Step-by-Step Guide:
