@@ -464,6 +464,9 @@ The navigation bar provides easy access to all sections of the site, adjusts for
 ![No post or PR](./readme/no_post_no_pr.png)
 
 #### Error Handling
+-   Custom error pages are designed to inform users of various errors such as Page not found along with a user-friendly message and a button with a link back to the homepage.
+![404 Page not found](./readme/404_not_found.png)
+
 ## Future Features
 -   Add programs for Personal training, Bootcamps and Nutrition Coaching to the app according to business needs.
 -   Add booking functionality for programs.
