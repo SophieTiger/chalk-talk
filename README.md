@@ -392,23 +392,84 @@ The table below describes the CRUD operations that can be performed on Chalk Tal
 ![Home page](./readme/homepage.png)
 
 **Home page for logged in users**
+-   When the user logs in, the navbar expands to show functionality aimed for authenticated users.
 ![Home page logged in users](./readme/homepage_logged_in.png)
 
 #### Search Functionality
+-   The searchbar allows users to type in search keywords for post titles and shows results accordingly.
+![Search result](./readme/search_result.png)
+
+-   If no results were found, the user is asked to try another search keyword.
+![No search result](./readme/search_no_result.png)
+
 #### Sign Up page
+-   New users can sign up by providing their username, email, and password. 
+![Sign Up page](./readme/sign_up_page.png)
+
 #### Sign In page
+-  Existing users can log in using their credentials to access personalized features.
+![Sign in page](./readme/sign_in_page.png)
+
 #### Responsive Navigation Bar
+The navigation bar provides easy access to all sections of the site, adjusts for different screen sizes, and includes user authentication options.
+
+-   Before user login:
+![Navbar logged out](./readme/navbar_logged_out.png)
+
+-   After user login:
+![Navbar logged in](./readme/navbar_logged_in.png)
+
+-   On smaller screens the navbar is shown as a burger icon:
+![Navbar small screens](./readme/navbar_small_collapsed.png)
+
+-   When clicking the burger icon, it expands:
+![Navbar small screens expanded](./readme/navbar_small_expanded.png)
+
 #### Add Posts
+-   Users can create posts by providing a title, content, tag and image.
+![Add post](./readme/add_post.png)
+
 #### Comments
+-   Users can leave comments on posts, engage in discussions, and provide feedback. They can also edit and delete their own comments.
+![Add comments](./readme/comment.png)
+
 #### Friends Feed
+-   On the friends feed page, only the posts created by followed users are shown.
+![Friends feed](./readme/friends_feed.png)
+
 #### Personal records page
-#### Percentage count of 1 rep max
+-   On the PR's page the user is asked to add a Personal Record if there are none. That can be done by using the form, adding exercise, weight, number of reps, date achieved and notes.
+![No PR's](./readme/no_pr.png)
+
+-   When a personal record is added it shows up in the personal records list.
+![Personal records list](./readme/pr_page.png)
+
+-   When the button with the percentage sign is clicked on a personal record, a list of 1 rep max percentages is shown in a list:
+![1 rep max percentages](./readme/percentage.png)
+
+-   Personal records can be edited and deleted by clicking the three dots on the specific personal record:
+![Edit delete PR](./readme/edit_delete_pr.png)
+
 #### Profile page
+-   Upon logging in, users can view and edit their profiles, username and password by clicking the three dots.
+![Edit profile](./readme/edit_profile_dropdown.png)
+
+-   When user enters edit mode on the profile for the first time the CrossFit Experience is set to "Newbie", that can be changed in the dropdown menu, as well as entering a personal bio, name and adding a profile picture.
+![Update profile](./readme/edit_profile.png)
+ 
+-   Users can view other users profile and personal records on the profile page, by clicking on another users avatar. On the profile page there is a list of maximum the latest 10 personal records shown for that user. 
+![Profile display](./readme/profile_display.png)
+
+-   If a user has no posts or PR's that is displayed on the profile page.
+![No post or PR](./readme/no_post_no_pr.png)
+
 #### Error Handling
 ## Future Features
 -   Add programs for Personal training, Bootcamps and Nutrition Coaching to the app according to business needs.
 -   Add booking functionality for programs.
 -   Add Notifications to let users know when interaction was made to their content, such as likes and comments.
+-   Add search functionality to personal records page to allow users with many PR's to search their records.
+-   Add the option for users to delete their own profile.
 
 # Reusable React Components
 
