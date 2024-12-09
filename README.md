@@ -72,7 +72,6 @@ Chalk Talk focuses on leveraging the latest web technologies, including React fo
     -   [Inspiration](#inspiration)
     -   [Project Giudance](#project-guidance)
     -   [ReadMe Structure](#readme-structure)
-    -   [Technical Solutions](#technical-solutions)
     -   [Personal Thanks](#personal-thanks)
 
 
@@ -445,6 +444,7 @@ The navigation bar provides easy access to all sections of the site, adjusts for
 ![Personal records list](./readme/pr_page.png)
 
 -   When the button with the percentage sign is clicked on a personal record, a list of 1 rep max percentages is shown in a list:
+
 ![1 rep max percentages](./readme/percentage.png)
 
 -   Personal records can be edited and deleted by clicking the three dots on the specific personal record:
@@ -623,19 +623,89 @@ Once the deployment process begins, you can monitor its progress in the "Activit
 Once the deployment is successful, Heroku will provide a URL to access your application. Click on "Open App" in the Heroku dashboard to view your live site.
 
 ## Additional Configurations
+**Static Files Serving:** Ensure your React app is configured to serve static files correctly by setting the appropriate paths in your build configuration.
+
+**Error Handling:** Make sure your app has proper error handling for production, including custom error pages and logging mechanisms.
+
+**Security:** Use environment variables for sensitive information and ensure HTTPS is enforced on your Heroku app.
 
 # Cloning and Forking
 ## Cloning the Repository
+**Local Setup:**
+
+1.  **Clone the repository:** [Chalk Talk GitHub repository](https://github.com/SophieTiger/chalk-talk/tree/main).
+`git clone https://github.com/SophieTiger/chalk-talk.git`
+
+2.  **Navigate into the project directory:**
+`cd chalk-talk`
+
+3.  **Install dependencies:**
+`npm install`
+
+4.  **Start the development server:**
+`npm start`
+
 ## Forking the Repository
+**For Contributions:**
+
+1.  **Fork the repository:** [Chalk Talk GitHub repository](https://github.com/SophieTiger/chalk-talk/tree/main)
+
+2.  **Clone your forked repository to your local machine:**
+`git clone https://github.com/SophieTiger/chalk-talk.git`
+
+3.  **Navigate into the project directory:**
+`cd chalk-talk`
+
+4.  **Install dependencies:**
+`npm install`
+
+5.  **Start the development server:**
+`npm start`
+
+6.  **Make changes** and **push** them back to your fork.
+
+7.  **Create a pull request** from your fork back to the original repo.
+
+By following these steps, you can either clone or fork the Chalk Talk repository and start contributing to the project or set it up for your own use.
 
 # Credits
 ## Code
+The following blogs/tutorials complemented my learning for this project:
+
+-   [React Bootstrap](https://react-bootstrap-v4.netlify.app/getting-started/introduction/)
+-   [React Router](https://reactrouter.com/en/main)
+
+-   [Django REST Framework](https://www.django-rest-framework.org/)
+
+-   **Code Institute Moments Walkthrough**
+-   [Setting up basic Django Project with Cloudinary](https://docs.google.com/document/d/1LCLxWhmW_4VTE4GXsnHgmPUwSPKNT4KyMxSH8agbVqU/edit#heading=h.mpopj7v69qqn)
+
+-   [Perplexity AI](https://www.perplexity.ai/) was used for solving issues like syntax errors and discussing structure of code.
+
+
 ## Media
+-   The following sites were used to gather the photographic media used:
+    -   [Pexels](https://www.pexels.com/)
+    -   [Freepik](https://www.freepik.com/)
+    -   Code Institute for the profile placeholder image
+
+-   Chalk Talk Logo was created with [Canva](https://www.canva.com/create/logos/)
+
 
 # Acknowledgements
-## Inspiration
-## Project Guidance
-## ReadMe Structure
-## Technical Solutions
-## Personal Thanks
+The development of Chalk Talk has been a very hard but yet exciting journey, and I am grateful for the inspiration, guidance, and resources that have contributed to the project.
 
+## Inspiration
+The idea for Chalk Talk was inspired by [CHALK IT PRO](https://www.chalkitpro.com/) and their functionality to add personal scores and percentage count. Though I also wanted to have the a community-centric approach to allow gyms to add the app to their daily business for comprehensive fitness tracking and community engagement with a personal touch.
+
+## Project Guidance
+Moments DJANGO REST DRF API and Moments REACT Walkthrough Project I utilized the Moments Walkthrough Project as a foundational guide. This project provided valuable insights into structuring the application, implementing various features, and ensuring a seamless user experience. The Moments project had several ideas and functionalities similar to what I envisioned for Fit&Fine, which helped streamline my development process.
+
+## ReadMe Structure
+-   The structure and format of the ReadMe file was inspired by some fellow students projects: [AmirShkolnik](https://github.com/AmirShkolnik/DivingCenter), [raneem-yad](https://github.com/raneem-yad/wissen) and [SwathiKeshavamurthy](https://github.com/SwathiKeshavamurthy/FitandFine-P5) . The detailed and organized presentation of information in their ReadMe served as a great example for documenting Chalk Talk.
+-   My own [PP4 Fitness Recipes](https://github.com/SophieTiger/fitness-recipes). This project provided valuable insights into structuring the application, implementing various features, and ensuring a seamless user experience.
+
+## Personal Thanks
+-   Thanks to my Code Institute mentor, Spencer Bariball, for supporting me in times of need and giving valuable guidance on this challenging journey!
+-   Thanks to Kristyna, Cohort facilitator at Code Institute, for always being there to provide all the information needed and for keeping the positive energy up in times of dispare.
+-   Thanks to my family for beliving in me when I lose hope.
