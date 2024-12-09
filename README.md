@@ -498,11 +498,43 @@ In the Chalk Talk application, several reusable components were developed or imp
 -   Usage: `<Avatar src={image} height={imageSize} />`
 -   Examples: Shown in the profile as a placeholder image if no profile picture.
 
+**NotFound**
+-   Purpose: 404 error page
+-   Usage: `<NotFound />`
+-   Examples: Custom error page for 404 error message
 
+### Imported components from react-bootstrap
+
+**Button**
+-   Purpose: Buttons for user actions
+-   Usage: The Button component is used across various forms and modal dialogs to handle user actions such as submitting forms, confirming actions, and navigating through the application. 
+-   Examples: Login form submission, confirmation modals.
+
+**Modal**
+-   Purpose: The Modal component is used for displaying dialogs and overlay content.
+-   Usage: It provides a consistent look and feel for all modals, ensuring a uniform user experience.
+-   Examples: Confirmation dialogs, percentage calculation.
+
+**Card**
+-   Purpose: The Card component is utilized to display content in a structured and visually appealing way.
+-   Usage: It is used for showing posts.
+
+**Form**
+-   Purpose: The Form component is a generic wrapper that handles form submission, validation, and error handling.
+-   Usage: It simplifies the creation of new forms and ensures a consistent user experience.
+-   Examples: User registration, login, post creation, adding personal records.
 
 
 # Technology Used
 ## Frontend
+-   [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5): Structure of the web pages.
+-   CSS3: Styling of the web content.
+-   JavaScript: Enhancements of interactivity and web behaviors.
+-   React: JavaScript library for building user interfaces.
+-   React Bootstrap: The most popular front-end framework rebuilt for React. Provides a variety of reusable components for responsive web design.
+-   React Router: A collection of navigational components that compose declaratively with your application.
+-   Axios: A promise-based HTTP client for making requests to the backend API.
+
 ## Backend
 ## Deployment and Version Control
 ## Development Tools
