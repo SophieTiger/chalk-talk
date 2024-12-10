@@ -272,8 +272,6 @@ I've used [Balsamiq](https://balsamiq.cloud/) to design the site wireframes.
 
 </details>
 
-<details>
-
 **Add Post**
 <details>
 <summary>Click here to view Add Post wireframes</summary>
