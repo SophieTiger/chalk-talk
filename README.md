@@ -266,64 +266,51 @@ I've used [Balsamiq](https://balsamiq.cloud/) to design the site wireframes.
 
 **Home Page**
 <details>
-<summary>Click here to View Home Page wireframes</summary>
+<summary>Click here to view Home Page wireframes</summary>
 
-![Alt text](path/to/your/image.jpg)
+![Home page](./readme/wf_home.png)
 
 </details>
 
 <details>
-<summary>Click here to View Home Page after Login wireframes</summary>
-
-![Alt text](path/to/your/image.jpg)
-
-</details>
 
 **Add Post**
 <details>
-<summary>Click here to View Add Post wireframes</summary>
+<summary>Click here to view Add Post wireframes</summary>
 
-![Alt text](path/to/your/image.jpg)
+![Add post page](./readme/wf_add_post.png)
 
 </details>
 
 **Friends Feed**
 <details>
-<summary>Click here to View Friends Feed wireframes</summary>
+<summary>Click here to view Friends Feed wireframes</summary>
 
-![Alt text](path/to/your/image.jpg)
+![Friends feed page](./readme/wf_friends.png)
 
 </details>
 
 **PR's**
 <details>
-<summary>Click here to View PR's wireframes</summary>
+<summary>Click here to view PR's wireframes</summary>
 
-![Alt text](path/to/your/image.jpg)
+![Personal records page](./readme/wf_pr_page.png)
 
 </details>
 
 **Profile page**
 <details>
-<summary>Click here to View Profile page wireframes</summary>
+<summary>Click here to view Profile page wireframes</summary>
 
-![Alt text](path/to/your/image.jpg)
-
-</details>
-
-**Sign Up**
-<details>
-<summary>Click here to View Sign Up wireframes</summary>
-
-![Alt text](path/to/your/image.jpg)
+![Profile page](./readme/wf_profile_page.png)
 
 </details>
 
-**Sign In**
+**Sign In/Up**
 <details>
-<summary>Click here to View Sign In wireframes</summary>
+<summary>Click here to view wireframes for Sign In and Sign Up</summary>
 
-![Alt text](path/to/your/image.jpg)
+![Sign In and Sign Up page](./readme/wf_signin_signup.png)
 
 </details>
 
