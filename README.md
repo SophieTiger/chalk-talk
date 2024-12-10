@@ -2,6 +2,7 @@
   <img src="./src/assets/chalk_logo_white.png" alt="Chalk Talk Logo" width="200"/>
 </p>
 
+<a name="top"></a>
 # Welcome
 Welcome to Chalk Talk, a comprehensive fitness and wellness platform designed to promote a healthy and active lifestyle. Chalk Talk connects individuals and fitness enthusiasts in a warm and inspiring community, providing tools and inspiration to help them achieve their fitness goals. 
 The platform offers a variety of features to support the fitness journey, including personal records tracking, weight load calculation and community interaction. Whether you are looking to improve your fitness, track your personal records, or engage with a supportive community, Chalk Talk is your go-to destination.
@@ -11,6 +12,8 @@ Chalk Talk focuses on leveraging the latest web technologies, including React fo
 ![Responsive website](./readme/responsive_media.png)
 
 [Chalk Talk Live website](https://chalk-talk-react-444e4f93c93c.herokuapp.com/)
+
+[Chalk Talk Backend GitHub repository](https://github.com/SophieTiger/chalk-talk-api)
 
 # Table of Contents
 -   [UX - User Experience](#ux--user-experience)
@@ -694,3 +697,5 @@ Moments DJANGO REST DRF API and Moments REACT Walkthrough Project I utilized the
 -   Thanks to my Code Institute mentor, Spencer Bariball, for supporting me in times of need and giving valuable guidance on this challenging journey!
 -   Thanks to Kristyna, Cohort facilitator at Code Institute, for always being there to provide all the information needed and for keeping the positive energy up in times of dispare.
 -   Thanks to my family for beliving in me when I lose hope.
+
+[Back to top](#top)
