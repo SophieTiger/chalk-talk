@@ -62,6 +62,7 @@ Chalk Talk focuses on leveraging the latest web technologies, including React fo
     -   [Security](#security-1)
     -   [Others](#others)
 -   [Testing & Validation](#testing--validation)
+-   [Bugs](#bugs)
 -   [Deployment](#deployment)
     -   [Step-by-Step Guide](#step-by-step-guide)
     -   [Additional Configurations](#additional-configurations)
@@ -557,6 +558,17 @@ In the Chalk Talk application, several reusable components were developed or imp
 
 # Testing & Validation
 For all testing and validation, please refer to the [TESTING.md](/TESTING.md) file.
+
+# Bugs
+## Solved Bugs
+-   **Bug:** When fetching the personal records for the owner and logged in user,  a text from a ternary from the PersonalRecordPage displayed before the loading spinner.
+    -   **Fix:** Making the PersonalRecordList component handle all states (loading, empty, and populated) without interference from PersonalRecordPage. This approach is more consistent and avoids the premature display of the "no records" message.
+-   **Bug:** No results on profile page briefly flashing before personal records list is shown.
+    -   **Fix:** Add new state variable: initialDataLoaded, setInitialDataLoaded, to track whether the initial data has been loaded. Then update the useEffect hook to set this state when the initial data is loaded and modify the return statement to use this new state.
+
+## Remaining Bugs
+-   **Bug:** Personal records (exercise title) is sticking to the left side on smaller screens and is not centered.
+    -   I would say this is due to me using the same react component on different pages. Until now I haven't had the time to fix it.
 
 # Deployment
 Deploying the Chalk Talk frontend involves using Heroku, a popular cloud platform that enables easy application deployment. Below are the steps for deploying the React frontend of the Chalk Talk application without using the Heroku CLI.
