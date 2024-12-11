@@ -692,7 +692,7 @@ The Chalk Talk project draws inspiration from two main sources:
 By combining the social aspects of Moments with these fitness-specific features I wanted to create a community-centric approach to allow gyms to use this app to their daily business for comprehensive fitness tracking and community engagement with a personal touch.
 
 ## Project Guidance
-Moments DJANGO REST DRF API and Moments REACT Walkthrough Project I utilized the Moments Walkthrough Project as a foundational guide. This project provided valuable insights into structuring the application, implementing various features, and ensuring a seamless user experience. The Moments project had several ideas and functionalities similar to what I envisioned for Fit&Fine, which helped streamline my development process.
+Moments DJANGO REST DRF API and Moments REACT Walkthrough Project I utilized the Moments Walkthrough Project as a foundational guide. This project provided valuable insights into structuring the application, implementing various features, and ensuring a seamless user experience. The Moments project had several ideas and functionalities similar to what I envisioned for Chalk Talk, which helped streamline my development process.
 
 ## README Structure
 -   The structure and format of the README file was inspired by some fellow students projects: [AmirShkolnik](https://github.com/AmirShkolnik/DivingCenter), [raneem-yad](https://github.com/raneem-yad/wissen) and [SwathiKeshavamurthy](https://github.com/SwathiKeshavamurthy/FitandFine-P5) . The detailed and organized presentation of information in their ReadMe served as a great example for documenting Chalk Talk.
@@ -701,6 +701,7 @@ Moments DJANGO REST DRF API and Moments REACT Walkthrough Project I utilized the
 ## Personal Thanks
 -   Thanks to my Code Institute mentor, Spencer Bariball, for supporting me in times of need and giving valuable guidance on this challenging journey!
 -   Thanks to Kristyna, Cohort facilitator at Code Institute, for always being there to provide all the information needed and for keeping the positive energy up in times of dispare.
--   Thanks to my family for beliving in me when I lose hope.
+-   Thanks to my cohort fellow students for all the wise words and for giving invaluable support on this journey.
+-   Thanks to my family for beliving in me when I lack confidence.
 
 [Back to top](#top)
