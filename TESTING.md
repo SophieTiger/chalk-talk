@@ -52,6 +52,10 @@ When removing %PUBLIC_URL% from the code in the validator, all errors are gone:
 -   **Purpose:** Ensures the CSS code is compliant with W3C standards, free from syntax errors, and follows best practices for styling.
 -   **Process:** All CSS files are validated through the W3C CSS Validation Service to identify and rectify any issues.
 
+![CSS Validation](./readme/testing/css_validator.png)
+
+**CSS Warnings:** This project includes custom styles that make use of vendor-specific extensions and pseudo-elements to ensure a consistent and polished user experience across various browsers and operating systems. During the linting process, certain warnings may appear, indicating the use of these vendor-specific extensions. These warnings are expected and can be safely ignored.
+
 ### JavaScript Validation
 -   **Tool Used:** [ESLint](https://eslint.org/)
 -   **Purpose:** To detect errors and potential problems in the JavaScript code, ensuring that all scripts run efficiently and are error-free. ESLint helps enforce consistent coding styles and best practices by identifying and fixing problematic patterns in JavaScript code.
@@ -69,8 +73,26 @@ To maintain a consistent code style across the project I used the terminal to ru
 -   Install Prettier globally: `npm install -g prettier`
 -   Run: `prettier --write "src/**/*.{js,jsx}"`
 
-Lighthouse
-Wave Accessibility Evaluation
+## Lighthouse
+-   **Tool Used:** [Google Lighthouse](https://en.wikipedia.org/wiki/Google_Lighthouse)
+-   **Purpose:** To assess the quality of web pages in terms of performance, accessibility, progressive web apps, SEO, and best practices.
+-   **Process:** Chalk Talk is tested with Google Lighthouse, which provides a detailed report on various aspects of the site’s performance and offers recommendations for improvement.
+
+**Home Page**
+**Sign In Page**
+**Sign Up Page**
+**Add Post Page**
+**Friends Feed Page**
+**PR's Page**
+**Profile Page**
+
+## Wave Accessibility Evaluation
+-   **Tool Used:** Wave Web Accessibility Evaluation Tool
+-   **Purpose:** To ensure that the website is accessible to individuals with disabilities by identifying and suggesting fixes for web accessibility issues.
+-   **Process:** The Wave tool evaluates each page of Chalk Talk to ensure it complies with accessibility standards like WCAG and Section 508.
+
+![Wave accessibility test](./readme/testing/wave_test.png)
+
 Manual Testing
 User Input/Form Validation
 Browser Compatibility
