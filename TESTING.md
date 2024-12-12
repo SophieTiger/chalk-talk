@@ -93,12 +93,33 @@ To maintain a consistent code style across the project I used the terminal to ru
 
 ![Wave accessibility test](./readme/testing/wave_test.png)
 
-Manual Testing
-User Input/Form Validation
-Browser Compatibility
-Toastify Messages Implementation Testing
-Responsiveness
-Automated Testing
+## Manual Testing
+### User Input/Form Validation
+Thorough testing was conducted on all forms throughout Chalk Talk to ensure accurate user input validation and to provide necessary feedback.
+
+### Browser Compatibility
+Chalk Talk was tested on the latest versions of major browsers to ensure compatibility across different platforms.
+
+| Browser            | Tested? | Issues Found | Pass/Fail |
+|--------------------|---------|--------------|-----------|
+| Chrome             | Yes     | None         | Pass      |
+| Firefox            | Yes     | None         | Pass      |
+| Microsoft Edge     | Yes     | None         | Pass      |
+
+### Responsiveness
+Responsiveness and interactive elements were thoroughly tested on various devices and through browser developer tools to ensure a seamless user experience across different platforms and screen sizes.
+
+| Device/Method | Features Tested |
+|---------------|-----------------|
+| Chrome DevTools | All |
+| Firefox Responsive Mode | All |
+| iPhone 14 | Navigation, Home, Sign Up |
+
+I have an issue logging in to the app on iPhone and I have been searching for the answer to why that is.
+It is not easy to find but there was also a discussion on Slack in this [thread](https://code-institute-room.slack.com/archives/C02MTH5MBDG/p1659705919570999) on the topic.
+I have tried the suggested solution but still not working.
+
+## Automated Testing
 Tools Used
 Running Tests
 
