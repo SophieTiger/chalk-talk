@@ -1,28 +1,33 @@
-import React, { useState } from 'react';
-import { Container, Button, Modal } from 'react-bootstrap';
-import { MoreDropdown } from '../../components/MoreDropdown';
-import appStyles from "../../App.module.css";
+import React, { useState } from "react";
+import { Container, Button, Modal } from "react-bootstrap";
+import { MoreDropdown } from "../../components/MoreDropdown";
 import styles from "../../styles/PersonalRecordDisplay.module.css";
 import btnStyles from "../../styles/Button.module.css";
 
-const PersonalRecordDisplay = ({ personalRecord, onEdit, onDelete, isOwner, showPercentageButton }) => {
+const PersonalRecordDisplay = ({
+  personalRecord,
+  onEdit,
+  onDelete,
+  isOwner,
+  showPercentageButton,
+}) => {
   const [showPercentages, setShowPercentages] = useState(false);
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
 
   const handleDelete = () => {
     setShowDeleteConfirmation(true);
   };
-  
+
   const confirmDelete = () => {
     onDelete(personalRecord.id);
     setShowDeleteConfirmation(false);
-  }
+  };
 
   const calculatePercentages = (weight) => {
     const percentages = [105, 90, 80, 70, 60, 50, 40, 30, 20, 10];
-    return percentages.map(percent => ({
+    return percentages.map((percent) => ({
       percent,
-      weight: Math.round(weight * (percent / 100))
+      weight: Math.round(weight * (percent / 100)),
     }));
   };
 
@@ -53,15 +58,21 @@ const PersonalRecordDisplay = ({ personalRecord, onEdit, onDelete, isOwner, show
         />
       )}
 
-      <Modal show={showDeleteConfirmation} onHide={() => setShowDeleteConfirmation(false)}>
-      <Modal.Header closeButton>
+      <Modal
+        show={showDeleteConfirmation}
+        onHide={() => setShowDeleteConfirmation(false)}
+      >
+        <Modal.Header closeButton>
           <Modal.Title>Confirm Deletion</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           Are you sure you want to delete this personal record?
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowDeleteConfirmation(false)}>
+          <Button
+            variant="secondary"
+            onClick={() => setShowDeleteConfirmation(false)}
+          >
             Cancel
           </Button>
           <Button variant="danger" onClick={confirmDelete}>
@@ -72,12 +83,18 @@ const PersonalRecordDisplay = ({ personalRecord, onEdit, onDelete, isOwner, show
 
       <Modal show={showPercentages} onHide={() => setShowPercentages(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>1 Rep Max Percentages: {personalRecord.exercise}</Modal.Title>
+          <Modal.Title>
+            1 Rep Max Percentages: {personalRecord.exercise}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          {calculatePercentages(personalRecord.weight).map(({ percent, weight }) => (
-            <p key={percent}>{percent}%: {weight} kg</p>
-          ))}
+          {calculatePercentages(personalRecord.weight).map(
+            ({ percent, weight }) => (
+              <p key={percent}>
+                {percent}%: {weight} kg
+              </p>
+            ),
+          )}
         </Modal.Body>
       </Modal>
     </Container>

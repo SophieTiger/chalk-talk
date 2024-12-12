@@ -7,7 +7,6 @@ import Profile from "./Profile";
 
 const PopularProfiles = ({ mobile }) => {
   const { popularProfiles } = useProfileData();
-  
 
   return (
     <Container
@@ -26,7 +25,7 @@ const PopularProfiles = ({ mobile }) => {
             </div>
           ) : (
             popularProfiles.results.map((profile) => (
-                <Profile key={profile.id} profile={profile} />
+              <Profile key={profile.id} profile={profile} />
             ))
           )}
         </>

@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import styles from "../../styles/Post.module.css";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
-import { Card, Media, OverlayTrigger, Tooltip, Modal, Button } from "react-bootstrap";
+import {
+  Card,
+  Media,
+  OverlayTrigger,
+  Tooltip,
+  Modal,
+  Button,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Avatar from "../../components/Avatar";
-import { axiosReq, axiosRes } from "../../api/axiosDefaults";
+import { axiosRes } from "../../api/axiosDefaults";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import { useHistory } from "react-router-dom/cjs/react-router-dom";
 
@@ -51,7 +58,7 @@ const Post = (props) => {
 
   const handleLike = async () => {
     try {
-      const { data } = await axiosRes.post('/likes/', { post: id });
+      const { data } = await axiosRes.post("/likes/", { post: id });
       setPosts((prevPosts) => ({
         ...prevPosts,
         results: prevPosts.results.map((post) => {
@@ -92,9 +99,12 @@ const Post = (props) => {
             </Link>
             <div className="d-flex align-items-center">
               <span>{updated_at}</span>
-              {is_owner && postPage && <MoreDropdown
-                handleEdit={handleEdit}
-                handleDelete={handleDelete} />}
+              {is_owner && postPage && (
+                <MoreDropdown
+                  handleEdit={handleEdit}
+                  handleDelete={handleDelete}
+                />
+              )}
             </div>
           </Media>
         </Card.Body>
@@ -137,15 +147,19 @@ const Post = (props) => {
         </Card.Body>
       </Card>
 
-      <Modal show={showDeleteConfirmation} onHide={() => setShowDeleteConfirmation(false)}>
+      <Modal
+        show={showDeleteConfirmation}
+        onHide={() => setShowDeleteConfirmation(false)}
+      >
         <Modal.Header closeButton>
           <Modal.Title>Confirm Deletion</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          Are you sure you want to delete this post?
-        </Modal.Body>
+        <Modal.Body>Are you sure you want to delete this post?</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowDeleteConfirmation(false)}>
+          <Button
+            variant="secondary"
+            onClick={() => setShowDeleteConfirmation(false)}
+          >
             Cancel
           </Button>
           <Button variant="danger" onClick={confirmDelete}>

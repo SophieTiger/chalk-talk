@@ -16,7 +16,6 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from "../profiles/PopularProfiles";
 
-
 function PostPage() {
   const { id } = useParams();
   const [post, setPost] = useState({ results: [] });
@@ -30,7 +29,7 @@ function PostPage() {
       try {
         const [{ data: post }, { data: comments }] = await Promise.all([
           axiosReq.get(`/posts/${id}`),
-          axiosReq.get(`/comments/?post=${id}`)
+          axiosReq.get(`/comments/?post=${id}`),
         ]);
         setPost({ results: [post] });
         setComments(comments);
@@ -60,21 +59,19 @@ function PostPage() {
           ) : null}
           {comments.results.length ? (
             <InfiniteScroll
-              children={comments.results.map(comment => (
+              children={comments.results.map((comment) => (
                 <Comment
                   key={comment.id}
                   {...comment}
                   setPost={setPost}
                   setComments={setComments}
                 />
-              ))
-              }
+              ))}
               dataLength={comments.results.length}
               loader={<Asset spinner />}
               hasMore={!!comments.next}
               next={() => fetchMoreData(comments, setComments)}
             />
-
           ) : currentUser ? (
             <span>No comments yet, be the first to comment!</span>
           ) : (

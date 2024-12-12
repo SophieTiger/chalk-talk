@@ -4,7 +4,7 @@
 
 <a name="top"></a>
 # Testing
-This is the TESTING file for the Chalk Talk website.
+This is the TESTING file for the [Chalk Talk](https://chalk-talk-react-444e4f93c93c.herokuapp.com/) website.
 
 Return back to the [README.md](README.md) file.
 
@@ -42,16 +42,33 @@ Validation results with errors in index.html:
 To test if this is an issue on the deployed site I inspected the page source in the browser to see if the %PUBLIC_URL% placeholders had been replaced with actual paths:
 ![index.html page source](./readme/testing/page_source_index.png)
 
-Since the %PUBLIC_URL was not present I assume that this indicates that the build process on Heroku is handling the %PUBLIC_URL% placeholders as expected. The Create React App build tool is replacing these placeholders with the appropriate root path for the deployed application.
+Since the %PUBLIC_URL% was not present I assume that this indicates that the build process on Heroku is handling the %PUBLIC_URL% placeholders as expected. The Create React App build tool is replacing these placeholders with the appropriate root path for the deployed application.
 
 When removing %PUBLIC_URL% from the code in the validator, all errors are gone:
 ![HTML validator no errors](./readme/testing/index.html_validation.png)
 
-CSS Validation
-JavaScript Validation
-ESLint
-Steps to Run JavaScript Validation
-Prettier for Code Formatting
+### CSS Validation
+-   **Tool Used:** [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
+-   **Purpose:** Ensures the CSS code is compliant with W3C standards, free from syntax errors, and follows best practices for styling.
+-   **Process:** All CSS files are validated through the W3C CSS Validation Service to identify and rectify any issues.
+
+### JavaScript Validation
+-   **Tool Used:** [ESLint](https://eslint.org/)
+-   **Purpose:** To detect errors and potential problems in the JavaScript code, ensuring that all scripts run efficiently and are error-free. ESLint helps enforce consistent coding styles and best practices by identifying and fixing problematic patterns in JavaScript code.
+-   **Process:** JavaScript code is run through ESLint to identify issues related to syntax, deprecated methods, and other inefficiencies.
+
+**Steps to Run JavaScript Validation**
+-   Install Dependencies: Ensure all required packages are installed by running: `npm install`
+-   Run ESLint: To run ESLint across the whole project and identify any issues: `npx eslint .`
+
+![ESLint warnings](./readme/testing/warnings_eslint.png)
+    -   After fixing the warnings and installing "@babel/plugin-proposal-private-property-in-object" as suggested all warnings are now cleared.
+ 
+**Prettier for Code Formatting**
+To maintain a consistent code style across the project I used the terminal to run Prettier on my entire project:
+-   Install Prettier globally: `npm install -g prettier`
+-   Run: `prettier --write "src/**/*.{js,jsx}"`
+
 Lighthouse
 Wave Accessibility Evaluation
 Manual Testing
