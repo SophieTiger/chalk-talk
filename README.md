@@ -573,7 +573,7 @@ For all testing and validation, please refer to the [TESTING.md](/TESTING.md) fi
 # Deployment
 Deploying the Chalk Talk frontend involves using Heroku, a popular cloud platform that enables easy application deployment. Below are the steps for deploying the React frontend of the Chalk Talk application without using the Heroku CLI.
 
-Prerequisites:
+**Prerequisites:**
 -   A GitHub account
 -   A Heroku account
 -   The React application(own version) repository pushed to GitHub or [Chalk Talk React Backend Github Repo](https://github.com/SophieTiger/chalk-talk-api)

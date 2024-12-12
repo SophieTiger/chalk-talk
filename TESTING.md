@@ -1,9 +1,58 @@
+<p align="center">
+  <img src="./src/assets/chalk_logo_white.png" alt="Chalk Talk Logo" width="200"/>
+</p>
 
-## Bugs
--   The issue was I moved the fetching of records into the PersonalRecordList component, which was causing it to always fetch all records regardless of the user profile being viewed. To fix this, I needed to pass the user ID to the PersonalRecordList and use it in the API call.
+<a name="top"></a>
+# Testing
+This is the TESTING file for the Chalk Talk website.
 
--   Bug on PersonalRecordPage when fetching the personal records for the owner and logged in user making a text from a ternary from the PersonalRecordPage display before the loading spinner.
-Solution: Making the PersonalRecordList component handle all states (loading, empty, and populated) without interference from PersonalRecordPage. This approach is more consistent and avoids the premature display of the "no records" message.
+Return back to the [README.md](README.md) file.
 
--   Bug on profile page briefly flashing No results before personal records list is shown.
-Solution: Add new state variable, initialDataLoaded, setInitialDataLoaded, to track whether the initial data has been loaded. Then update the useEffect hook to set this state when the initial data is loaded and modify the return statement to use this new state with initialDataLoaded 
+## Table of Contents
+Validation
+HTML Validation
+CSS Validation
+JavaScript Validation
+ESLint
+Steps to Run JavaScript Validation
+Prettier for Code Formatting
+Lighthouse
+Wave Accessibility Evaluation
+Manual Testing
+User Input/Form Validation
+Browser Compatibility
+Toastify Messages Implementation Testing
+Responsiveness
+Automated Testing
+Tools Used
+Running Tests
+
+
+## Validation
+To ensure the reliability, usability, and accessibility of Chalk Talk, various validation methodologies were implemented. These validations ensure that the application not only meets development standards but also provides a seamless user experience across different platforms and browsers. Below is an overview of the validation processes.
+
+### HTML Validation
+-   **Tool Used:** [HTML W3C Markup Validator](https://validator.w3.org/)
+-   **Purpose:** Validates the HTML code of the application to ensure it is free from syntax errors and adheres to the standards set by the World Wide Web Consortium (W3C).
+-   **Process:** All HTML pages of Chalk Talk are checked through the W3C validator to identify and fix any markup errors or warnings.
+
+Validation results with zero errors and warnings in index.html:
+
+CSS Validation
+JavaScript Validation
+ESLint
+Steps to Run JavaScript Validation
+Prettier for Code Formatting
+Lighthouse
+Wave Accessibility Evaluation
+Manual Testing
+User Input/Form Validation
+Browser Compatibility
+Toastify Messages Implementation Testing
+Responsiveness
+Automated Testing
+Tools Used
+Running Tests
+
+
+[Back to top](#top)
