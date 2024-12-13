@@ -76,24 +76,31 @@ To maintain a consistent code style across the project I used the terminal to ru
 -   **Process:** Chalk Talk is tested with Google Lighthouse, which provides a detailed report on various aspects of the site’s performance and offers recommendations for improvement.
 
 **Home Page**
+
 ![Lighthouse test home page](./readme/testing/lighthouse_home.png)
 
 **Sign In Page**
+
 ![Lighthouse test Sign In page](./readme/testing/lighthouse_signin.png)
 
 **Sign Up Page**
+
 ![Lighthouse test Sign Up page](./readme/testing/lighthouse_signup.png)
 
 **Add Post page**
+
 ![Lighthouse test Add Post](./readme/testing/lighthouse_add_post.png)
 
 **Post detail page**
+
 ![Lighthouse test Post detail](./readme/testing/lighthouse_post_detail.png)
 
 **PR's Page**
+
 ![Lighthouse test PR's page](./readme/testing/lighthouse_pr_page.png)
 
 **Profile Page**
+
 ![Lighthouse test Profile page](./readme/testing/lighthouse_profile.png)
 
 I have compressed some images, but could not increase the performance scores.
