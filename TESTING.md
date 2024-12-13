@@ -71,17 +71,37 @@ To maintain a consistent code style across the project I used the terminal to ru
 -   Run: `prettier --write "src/**/*.{js,jsx}"`
 
 ## Lighthouse
--   **Tool Used:** [Google Lighthouse](https://en.wikipedia.org/wiki/Google_Lighthouse)
+-   **Tool Used:** [Google Lighthouse](https://en.wikipedia.org/wiki/Google_Lighthouse) is an open-source, automated tool for improving the quality of web pages. It performs audits for performance, accessibility, progressive web apps, SEO, and more. You can run it against any web page, public or requiring authentication. 
 -   **Purpose:** To assess the quality of web pages in terms of performance, accessibility, progressive web apps, SEO, and best practices.
 -   **Process:** Chalk Talk is tested with Google Lighthouse, which provides a detailed report on various aspects of the site’s performance and offers recommendations for improvement.
 
 **Home Page**
+![Lighthouse test home page](./readme/testing/lighthouse_home.png)
+
 **Sign In Page**
+![Lighthouse test Sign In page](./readme/testing/lighthouse_signin.png)
+
 **Sign Up Page**
-**Add Post Page**
-**Friends Feed Page**
+![Lighthouse test Sign Up page](./readme/testing/lighthouse_signup.png)
+
+**Add Post page**
+![Lighthouse test Add Post](./readme/testing/lighthouse_add_post.png)
+
+**Post detail page**
+![Lighthouse test Post detail](./readme/testing/lighthouse_post_detail.png)
+
 **PR's Page**
+![Lighthouse test PR's page](./readme/testing/lighthouse_pr_page.png)
+
 **Profile Page**
+![Lighthouse test Profile page](./readme/testing/lighthouse_profile.png)
+
+I have compressed some images, but could not increase the performance scores.
+Best practices show a score of 79 on some pages and it is due to refresh tokens.
+
+Comparing the Lighthouse scores for Chalk Talk to other social media platforms, such as Instagram, I find the above scores ok.
+![Instagram Lighthouse scores](./readme/testing/lighthouse_instagram.png)
+
 
 ## Wave Accessibility Evaluation
 -   **Tool Used:** Wave Web Accessibility Evaluation Tool
