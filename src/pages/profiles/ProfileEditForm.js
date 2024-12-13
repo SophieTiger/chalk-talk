@@ -98,7 +98,7 @@ const ProfileEditForm = () => {
       </Form.Group>
 
       {errors?.name?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
+        <Alert variant="danger" key={idx}>
           {message}
         </Alert>
       ))}
@@ -121,7 +121,7 @@ const ProfileEditForm = () => {
       </Form.Group>
 
       {errors?.crossfit_experience?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
+        <Alert variant="danger" key={idx}>
           {message}
         </Alert>
       ))}
@@ -138,7 +138,7 @@ const ProfileEditForm = () => {
       </Form.Group>
 
       {errors?.bio?.map((message, idx) => (
-        <Alert variant="warning" key={idx}>
+        <Alert variant="danger" key={idx}>
           {message}
         </Alert>
       ))}
@@ -169,7 +169,7 @@ const ProfileEditForm = () => {
                 </figure>
               )}
               {errors?.image?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
+                <Alert variant="danger" key={idx}>
                   {message}
                 </Alert>
               ))}

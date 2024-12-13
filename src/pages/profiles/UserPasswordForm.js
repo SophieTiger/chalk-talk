@@ -68,7 +68,7 @@ const UserPasswordForm = () => {
               />
             </Form.Group>
             {errors?.new_password1?.map((message, idx) => (
-              <Alert key={idx} variant="warning">
+              <Alert key={idx} variant="danger">
                 {message}
               </Alert>
             ))}
@@ -83,7 +83,7 @@ const UserPasswordForm = () => {
               />
             </Form.Group>
             {errors?.new_password2?.map((message, idx) => (
-              <Alert key={idx} variant="warning">
+              <Alert key={idx} variant="danger">
                 {message}
               </Alert>
             ))}
