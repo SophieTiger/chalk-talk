@@ -175,8 +175,10 @@ The project was divied into six sprints using Milestones in GitHub Projects. Thi
 -   **Won't Haves:** the features or components that either no longer fit the project's brief, get taken out of the scope or are of very low priority for this release.
 
 ### User Stories
-To start with I created a sheet with all the user stories that I wanted to cover, before moving them to issues in the Github Project Kanban board. This is a little bit of that sheet:
+To start with I created a Google sheet with all the user stories that I wanted to cover, before moving them to issues in the Github Project Kanban board. This is a little bit of that sheet:
 ![User stories sheet](./readme/user_stories.png)
+
+This is a link to the [Google Sheet](https://docs.google.com/spreadsheets/d/1rKGs1Hhj2eyyOwmUVREdLI9_aTwwwmA-umMG1KaeUTs/edit?gid=1205656762#gid=1205656762).
 
 Here is a link to the [Kanban Board](https://github.com/users/SophieTiger/projects/5) where all user stories can be viewed.
 
