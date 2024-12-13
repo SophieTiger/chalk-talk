@@ -20,6 +20,7 @@ Return back to the [README.md](README.md) file.
   - [Form Validation](#form-validation)
   - [Browser Compatibility](#browser-compatibility)
   - [Responsiveness](#responsiveness)
+- [User story testing](#user-story-testing)
 - Automated Testing
 Tools Used
 Running Tests
@@ -216,6 +217,12 @@ Responsiveness and interactive elements were thoroughly tested on various device
 I have an issue logging in to the app on iPhone and I have been searching for the answer to why that is.
 It is not easy to find but there was also a discussion on Slack in this [thread](https://code-institute-room.slack.com/archives/C02MTH5MBDG/p1659705919570999) on the topic.
 I have tried the suggested solution but still not working.
+
+## User story testing
+During development the [Chalk Talk project](https://github.com/users/SophieTiger/projects/5) was utilizing a kanban board with all User stories added to it, that were worked through in Iterations.
+Every user story has acceptance criteria and tasks added to them, which were all tested during the development process.
+
+![User story tests](./readme/testing/user_story_tests.png)
 
 ## Automated Testing
 Tools Used
