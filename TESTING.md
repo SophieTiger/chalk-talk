@@ -9,21 +9,18 @@ This is the TESTING file for the [Chalk Talk](https://chalk-talk-react-444e4f93c
 Return back to the [README.md](README.md) file.
 
 ## Table of Contents
-Validation
-HTML Validation
-CSS Validation
-JavaScript Validation
-ESLint
-Steps to Run JavaScript Validation
-Prettier for Code Formatting
-Lighthouse
-Wave Accessibility Evaluation
-Manual Testing
-User Input/Form Validation
-Browser Compatibility
-Toastify Messages Implementation Testing
-Responsiveness
-Automated Testing
+- [Validation](#validation)
+  - [HTML Validation](#html-validation)
+  - [CSS Validation](#css-validation)
+  - [JavaScript Validation](#javascript-validation)
+- [Lighthouse](#lighthouse)
+- [Wave Accessibility Evaluation](#wave-accessibility-evaluation)
+- [Manual Testing](#manual-testing)
+  - [User Input](#user-input)
+  - [Form Validation](#form-validation)
+  - [Browser Compatibility](#browser-compatibility)
+  - [Responsiveness](#responsiveness)
+- Automated Testing
 Tools Used
 Running Tests
 
@@ -94,8 +91,65 @@ To maintain a consistent code style across the project I used the terminal to ru
 ![Wave accessibility test](./readme/testing/wave_test.png)
 
 ## Manual Testing
-### User Input/Form Validation
-Thorough testing was conducted on all forms throughout Chalk Talk to ensure accurate user input validation and to provide necessary feedback.
+Thorough testing was conducted on all pages, functionality and forms throughout Chalk Talk to ensure accurate user input validation and to provide necessary feedback.
+
+### User Input
+**Logged out users**
+
+| Feature | Tested? | User Input Required | Expected result | Pass/Fail | Notes on Fix (If Any) |
+|---------|---------|---------------------|------------------------|-----------|----------------------|
+| Navigation Links | Yes | Click | Links redirect to corresponding pages. Hover effects indicate interactivity. | Pass | - |
+| Home Page Welcome| Yes | Click | Welcome message is shown and prompts user to sign in or sign up | Pass | - |
+| Home Page posts| Yes | Click | Clicking on posts takes users to detailed views. | Pass | - |
+| Home Page profiles| Yes | Click | Clicking on a profile takes users to detailed views. | Pass | - |
+| Sign Up Page | Yes | Username/Password/Confirm password | Validation prompts if incorrect input. Redirecting user to Sign In page | Pass | - |
+| Sign In Page | Yes | Username and Password | Correct credentials required for login. Error message for failed login attempt. | Pass | - |
+| Add Post Page | Yes | Text/Image Upload | Page is not shown when user is logged out. | Pass | - |
+| Post Detail Interaction | Yes | Click on various elements | Detailed view of post with comments and like/follow count. | Pass | - |
+| Personal Record Page | Yes | Text Input/Time Input | Page is not shown when user is logged out. | Pass | - |
+| Friends Feed Page | Yes | Click | Page is not shown when user is logged out. | Pass | - |
+| Profile Page | Yes | Text/Image Upload | Page is not shown when user is logged out. | Pass | - |
+| Comments | Yes | Text Input | Users can view comments. Users cannot add comment. | Pass | - |
+| Like Interaction | Yes | Click | Users can view likes. Users cannot add likes. | Pass | - |
+| Follow Interaction | Yes | Click | Users cannot follow other users. | Pass | - |
+| Search & Filter functionality | Yes | Text Input/Click | Relevant search results displayed. Message for no results found. | Pass | - |
+| Mobile Navigation (Hamburger Menu) | Yes | Touch/Click | Responsive menu works on touch devices. Toggles correctly. | Pass | - |
+| Form Error Handling | Yes | Invalid Inputs | Forms handle errors with descriptive messages guiding the user. | Pass | - |
+| Responsive Design Elements | Yes | Resize/Change Orientation | All elements resize and adjust appropriately for different screen sizes. | Pass | - |
+| Accessibility Features (e.g., ARIA) | Yes | Use of assistive technology | ARIA labels and roles are present, ensuring accessibility compliance. | Pass | - |
+
+**Logged in users**
+| Feature | Tested? | User Input Required | Expected result | Pass/Fail | Notes on Fix (If Any) |
+|---------|---------|---------------------|------------------------|-----------|----------------------|
+| Navigation Links | Yes | Click | Links redirect to corresponding pages. Hover effects indicate interactivity. | Pass | - |
+| Home Page Welcome | Yes | Click | Once user is logged in the welcome message is not shown. | Pass | - |
+| Home Page posts| Yes | Click | Clicking on a post takes users to detailed views. | Pass | - |
+| Home Page profiles| Yes | Click | Clicking on a profile takes users to detailed views. | Pass | - |
+| Add Post and Submission | Yes | Text/Image Upload | Mandatory fields checked. Redirecting to post detail page. | Pass | - |
+| Edit Post | Yes | Text/Image Upload | Form prepopulated with post data. Mandatory fields checked. Redirecting to post detail page. | Pass | - |
+| Delete Post | Yes | Click | Delete confirmation modal displayed. Redirecting to previous page. | Pass | - |
+| Post Detail Interaction | Yes | Click on various elements | Detailed view of post with comments and like/follow options. | Pass | - |
+| Friends Feed Page | Yes | Click | Only posts created by followed users are shown. Message if no results found. | Pass | - |
+| Personal Record Page| Yes | Click | List of PR's shown with a percentage button or message if no results found. Form to create PR. | Pass | - |
+| Personal Record Percentage | Yes | Click | Clicking percentage button of a PR displays a modal with percentage calculation. | Pass | - |
+| Add Personal Record | Yes | Text/Number/Date Input | Mandatory fields checked. PR directly added to list when created. | Pass | - |
+| Edit Personal Record | Yes | Text/Number/Date Input | Form prepopulated with data. Mandatory fields checked. PR directly updated in list. | Pass | - |
+| Delete Personal Record | Yes | Click | Delete confirmation modal displayed. Redirecting to PR's page. | Pass | - |
+| Edit Profile | Yes | Text/Image Upload | Changes saved and updated profile information directly shown. | Pass | - |
+| Comment Submission | Yes | Text Input | Users can submit comments and comment directly shown under the post. | Pass | - |
+| Comment Edit | Yes | Text Input | Users can edit their own comments and update directly shown under the post. | Pass | - |
+| Comment Delete | Yes | Click | Users can delete their own comments. Delete confirmation modal displayed. Redirecting to post detail page. | Pass | - |
+| Like/Unlike Interaction | Yes | Click | Visual feedback on like/unlike. Counts update accordingly. | Pass | - |
+| Follow/Unfollow Interaction | Yes | Click | Visual feedback on follow/unfollow. Counts update accordingly. | Pass | - |
+| Search & Filter functionality | Yes | Text Input/Click | Relevant search results displayed. Message for no results found. | Pass | - |
+| Mobile Navigation (Hamburger Menu) | Yes | Touch/Click | Responsive menu works on touch devices. Toggles correctly. | Pass | - |
+| Form Error Handling | Yes | Invalid Inputs | Forms handle errors with descriptive messages guiding the user. | Pass | - |
+| Sign out Functionality | Yes | Click | Users can sign out successfully and get redirected to homepage. | Pass | - |
+| Responsive Design Elements | Yes | Resize/Change Orientation | All elements resize and adjust appropriately for different screen sizes. | Pass | - |
+| Accessibility Features (e.g., ARIA) | Yes | Use of assistive technology | ARIA labels and roles are present, ensuring accessibility compliance. | Pass | - |
+
+### Form Validation
+
 
 ### Browser Compatibility
 Chalk Talk was tested on the latest versions of major browsers to ensure compatibility across different platforms.
