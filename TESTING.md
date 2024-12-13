@@ -129,12 +129,13 @@ Thorough testing was conducted on all pages, functionality and forms throughout 
 | Edit Post | Yes | Text/Image Upload | Form prepopulated with post data. Mandatory fields checked. Redirecting to post detail page. | Pass | - |
 | Delete Post | Yes | Click | Delete confirmation modal displayed. Redirecting to previous page. | Pass | - |
 | Post Detail Interaction | Yes | Click on various elements | Detailed view of post with comments and like/follow options. | Pass | - |
-| Friends Feed Page | Yes | Click | Only posts created by followed users are shown. Message if no results found. | Pass | - |
+| Friends Feed Page | Yes | Click | Only posts created by followed users are shown. Message if no results found. List of profiles to follow/unfollow is shown. | Pass | - |
 | Personal Record Page| Yes | Click | List of PR's shown with a percentage button or message if no results found. Form to create PR. | Pass | - |
 | Personal Record Percentage | Yes | Click | Clicking percentage button of a PR displays a modal with percentage calculation. | Pass | - |
 | Add Personal Record | Yes | Text/Number/Date Input | Mandatory fields checked. PR directly added to list when created. | Pass | - |
 | Edit Personal Record | Yes | Text/Number/Date Input | Form prepopulated with data. Mandatory fields checked. PR directly updated in list. | Pass | - |
 | Delete Personal Record | Yes | Click | Delete confirmation modal displayed. Redirecting to PR's page. | Pass | - |
+| Profile Page| Yes | Click | Profile details shown with edit/delete functionality. List of users posts and PR's shown. Message if no results found. | Pass | - |
 | Edit Profile | Yes | Text/Image Upload | Changes saved and updated profile information directly shown. | Pass | - |
 | Comment Submission | Yes | Text Input | Users can submit comments and comment directly shown under the post. | Pass | - |
 | Comment Edit | Yes | Text Input | Users can edit their own comments and update directly shown under the post. | Pass | - |
@@ -149,6 +150,10 @@ Thorough testing was conducted on all pages, functionality and forms throughout 
 | Accessibility Features (e.g., ARIA) | Yes | Use of assistive technology | ARIA labels and roles are present, ensuring accessibility compliance. | Pass | - |
 
 ### Form Validation
+| Feature            | Tested? | Action | Expected outcome | Pass/Fail | Screenshot |
+|--------------------|---------|--------------|-----------|-----------|-----------|
+| Sign Up Form | Yes | Submit form | Validation prompts if incorrect input. Redirecting user to Sign In page. |Pass | ![sign up form](./readme/testing/sign_up_form.png) ![sign up form pwd to short](./readme/testing/sign_up_short_pwd.png) ![sign up form pwd no match](./readme/testing/sign_up_pwd_nomatch.png) |
+
 
 
 ### Browser Compatibility
