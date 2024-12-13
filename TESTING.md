@@ -155,16 +155,16 @@ Thorough testing was conducted on all pages, functionality and forms throughout 
 |--------------------|---------|--------------|-----------|-----------|-----------|
 | Sign Up Form | Yes | Submit form | Validation prompts if incorrect input. Redirecting user to Sign In page. |Pass | ![sign up form](./readme/testing/sign_up_form.png) ![sign up form pwd to short](./readme/testing/sign_up_short_pwd.png) ![sign up form pwd no match](./readme/testing/sign_up_pwd_nomatch.png) |
 | Sign In Form | Yes | Submit form | Validation prompts if incorrect input. Redirecting user to Home page. Profile username is diplayed in Navbar. |Pass | ![sign in blank](./readme/testing/sign_in_blank.png) ![sign in wrong credentials](./readme/testing/sign_in_wrong_cred.png) ![sign in username in navbar](./readme/testing/navbar_username.png) |
-| Add Post Form | Yes | Submit form | Validation prompts if incorrect input. Post is created and displayed. |Pass | ![post form invalid](./readme/testing/post_form_invalid_data.png) |
-| Personal Record Form | Yes | Submit form | Validation prompts if incorrect input. Personal Record is created and displayed in the list. |Pass | ![invalid data in PR form](./readme/testing/pr_form_invalid_data.png) |
-| Personal Record Edit Form | Yes | Submit form | Form is prepopulated with comment data. When updated the personal record is directly displayed in the list. |Pass | ![Personal record options](./readme/testing/pr_moredropdown.png) ![Personal record edit form](./readme/testing/pr_edit.png) |
-| Personal Record Delete Form | Yes | Submit form | Delete confirmation modal displayed. Personal Record is deleted. |Pass | ![Personal Record Delete modal](./readme/testing/pr_delete.png) |
-| Profile Edit Form | Yes | Submit form | Profile is edited and displayed. |Pass | ![Profile edit form](./readme/testing/profile_edit.png) |
-| Profile Change password Form | Yes | Submit form | Validation prompts if incorrect input. Profile is updated and displayed. |Pass | ![Profile change password](./readme/testing/profile_change_password.png) |
-| Profile Change username Form | Yes | Submit form | Validation prompts if incorrect input. Profile is updated and displayed. |Pass | ![Profile change username](./readme/testing/profile_change_username.png) |
-| Comment Form | Yes | Submit form | Comment is added to the post |Pass | ![Add Comment](./readme/testing/comment_add.png) |
-| Comment Edit Form | Yes | Submit form | Form is prepopulated with comment data. When updated the comment is directly displayed under the post. |Pass | ![Comment options](./readme/testing/comment_moredropdown.png) ![Comment edit](./readme/testing/comment_edit.png) |
-| Comment Delete Form | Yes | Submit form | Delete confirmation modal displayed. If confirmed comment is directly removed. |Pass | ![Comment delete](./readme/testing/comment_delete.png) |
+| Add Post Form | Yes | Submit post | Validation prompts if incorrect input. Post is created and displayed. |Pass | ![post form invalid](./readme/testing/post_form_invalid_data.png) |
+| Personal Record Form | Yes | Submit personal record | Validation prompts if incorrect input. Personal Record is created and displayed in the list. |Pass | ![invalid data in PR form](./readme/testing/pr_form_invalid_data.png) |
+| Personal Record Edit Form | Yes | Personal Record Edit | Form is prepopulated with comment data. When updated the personal record is directly displayed in the list. |Pass | ![Personal record options](./readme/testing/pr_moredropdown.png) ![Personal record edit form](./readme/testing/pr_edit.png) |
+| Personal Record Delete | Yes | Personal Record Delete | Delete confirmation modal displayed. Personal Record is deleted. |Pass | ![Personal Record Delete modal](./readme/testing/pr_delete.png) |
+| Profile Edit Form | Yes | Profile Edit | Profile is edited and displayed. |Pass | ![Profile edit form](./readme/testing/profile_edit.png) |
+| Profile Change password Form | Yes | Profile Change password | Validation prompts if incorrect input. Profile is updated and displayed. |Pass | ![Profile change password](./readme/testing/profile_change_password.png) |
+| Profile Change username Form | Yes | Profile Change username | Validation prompts if incorrect input. Profile is updated and displayed. |Pass | ![Profile change username](./readme/testing/profile_change_username.png) |
+| Add Comment Form | Yes | Submit comment | Comment is added to the post |Pass | ![Add Comment](./readme/testing/comment_add.png) |
+| Comment Edit Form | Yes | Comment Edit | Form is prepopulated with comment data. When updated the comment is directly displayed under the post. |Pass | ![Comment options](./readme/testing/comment_moredropdown.png) ![Comment edit](./readme/testing/comment_edit.png) |
+| Comment Delete Form | Yes | Comment Delete | Delete confirmation modal displayed. If confirmed comment is directly removed. |Pass | ![Comment delete](./readme/testing/comment_delete.png) |
 
 
 
