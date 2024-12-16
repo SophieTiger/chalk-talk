@@ -225,8 +225,30 @@ Every user story has acceptance criteria and tasks added to them, which were all
 ![User story tests](./readme/testing/user_story_tests.png)
 
 ## Automated Testing
-Tools Used
-Running Tests
+### Tools Used
+- Jest: A JavaScript testing framework for creating and running tests.
+- React Testing Library: A set of helpers that let you test React components without relying on their implementation details.
+
+**Key areas tested:**
+- Component Rendering: Ensure components render as expected.
+- User Interactions: Verify interactions like user signing in.
+
+### Running Tests
+1. **Install the dependencies:** `npm install`
+2. **Run the tests:** `npm test`
+3. **Following red-green-refactoring:**
+  - Adding a test that will fail:
+
+  ![navbar fail pr page](./readme/testing/jest_navbar_pr_fail.png)
+
+  - Changing it to pass:
+
+  ![navbar pass pr page](./readme/testing/jest_navbar_pr_pass.png)
+
+4. **All tests for navbar pass:**
+
+![all test pass](./readme/testing/jest_navbar.png)
+
 
 
 [Back to top](#top)
