@@ -52,6 +52,7 @@ Chalk Talk focuses on leveraging the latest web technologies, including React fo
             -   [My Personal records](#my-personal-records)
             -   [Percentage count of 1 rep max](#percentage-count-of-1-rep-max)            
             -   [Error Handling](#error-handling)
+            -   [User feedback and confirmation](#user-feedback-and-confirmation)
     -   [Future Features](#future-features)
 -   [Reusable React Components](#reusable-react-components)
 -   [Technology Used](#technology-used)
@@ -457,6 +458,34 @@ The navigation bar provides easy access to all sections of the site, adjusts for
 #### Error Handling
 -   Custom error pages are designed to inform users of various errors such as Page not found along with a user-friendly message and a button with a link back to the homepage.
 ![404 Page not found](./readme/404_not_found.png)
+
+#### User feedback and confirmation
+Since this is a social media platform meant to provide a smooth user experience, the feedback on user actions are as follows:
+-   Sign up
+    -   When signing up for an account, the user is directly redirected to the sign in form.
+-   Sign in
+    -   When signing in the navbar display changes to show all pages available to logged in users and the name of the logged in user is displayed next to the Profile Avatar.
+-   Sign out
+    -   When signing out the user is redirected to the Home page where the welcome message is shown and the user is prompted to sign in or sign up. Also the Navbar changes to only display pages available to logged out users.
+-   Personal Records
+    -   When creating a personal record, the record is immediately displayed in the personal records list, next to or below the form depending on device, without a confirmation message.
+    -   When editing a personal record, the change is immediately displayed in the personal records, next to or below the form depending on device, without a confirmation message.
+    -   When deleting a personal record, a confimation modal is displayed to the user to confim the deletion before it is deleted.
+-   Posts
+    -   When creating a post, the post is immediately displayed, and the user is redirected to the post detail page, without a confirmation message.
+    -   When editing a post, the change is immediately displayed, and the user is redirected to the post detail page without a confirmation message.
+    -   When deleting a personal record, a confimation modal is displayed to the user to confim the deletion before it is deleted.
+-   Comments
+    -   When creating a comment, the comment is immediately displayed under the post, without a confirmation message.
+    -   When editing a comment, the change is immediately displayed under the post, without a confirmation message.
+    -   When deleting a comment, a confimation modal is displayed to the user to confim the deletion before it is deleted.
+-   Likes
+    -   When clicking like on a post, the heart turns red and the like count directly gets incremented by 1.
+    -   When clicking unlike on a post, the heart turns white and the like count directly gets decremented by 1.
+-   Followers
+    -   When clicking follow on a user, the follow button text changes to unfollow and the follow count on that users profile directly increments by 1.
+    -   When clicking unfollow on a user, the unfollow button text changes to follow and the follow count on that users profile directly decrements by 1.
+
 
 ## Future Features
 -   Add programs for Personal training, Bootcamps and Nutrition Coaching to the app according to business needs.
