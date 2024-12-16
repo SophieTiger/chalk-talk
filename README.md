@@ -40,17 +40,15 @@ Chalk Talk focuses on leveraging the latest web technologies, including React fo
         -   [CRUD Functionality](#crud-functionality)
         -   [All Existing Features with Screenshots](#all-existing-features-with-screenshots)
             -   [Home Page](#home-page)
-            -   [User Registration, Login](#user-registration-login)
-            -   [User Profile](#user-profile)
             -   [Search Functionality](#search-functionality)
+            -   [Sign up](#sign-up-page)
+            -   [Sign in](#sign-in-page)
             -   [Responsive Navigation Bar](#responsive-navigation-bar)
             -   [Add Posts](#add-posts)
             -   [Comments](#comments)
-            -   [My Posts](#my-posts)
-            -   [My Feed](#my-feed)
-            -   [Add Personal records](#add-personal-records)
-            -   [My Personal records](#my-personal-records)
-            -   [Percentage count of 1 rep max](#percentage-count-of-1-rep-max)            
+            -   [Friends Feed](#friends-feed)
+            -   [Personal records](#personal-records-page)
+            -   [Profile page](#profile-page)            
             -   [Error Handling](#error-handling)
             -   [User feedback and confirmation](#user-feedback-and-confirmation)
     -   [Future Features](#future-features)
@@ -184,7 +182,9 @@ This is a link to the [Google Sheet](https://docs.google.com/spreadsheets/d/1rKG
 Here is a link to the [Kanban Board](https://github.com/users/SophieTiger/projects/5) where all user stories can be viewed.
 
 **User stories that was taken out of scope**
-During development the features for adding, viewing and booking programs was taken out of scope and prioritization was changed to "Won't have". This was due to lack of time and those features has been added to potential future features for the project. Issues were closed as "not planned".
+During development the features for adding, viewing and booking programs was taken out of scope and prioritization was changed to "Won't have". This was due to lack of time and those features has been added to potential future features for the project.
+Also user stories for recovering passwords and searching and filtering personal records were taken out of scope due to lack of time.
+Issues were closed as "not planned".
 
 
 ## Scope plane
@@ -461,28 +461,28 @@ The navigation bar provides easy access to all sections of the site, adjusts for
 
 #### User feedback and confirmation
 Since this is a social media platform meant to provide a smooth user experience, the feedback on user actions are as follows:
--   Sign up
+-   **Sign up**
     -   When signing up for an account, the user is directly redirected to the sign in form.
--   Sign in
+-   **Sign in**
     -   When signing in the navbar display changes to show all pages available to logged in users and the name of the logged in user is displayed next to the Profile Avatar.
--   Sign out
+-   **Sign out**
     -   When signing out the user is redirected to the Home page where the welcome message is shown and the user is prompted to sign in or sign up. Also the Navbar changes to only display pages available to logged out users.
--   Personal Records
+-   **Personal Records**
     -   When creating a personal record, the record is immediately displayed in the personal records list, next to or below the form depending on device, without a confirmation message.
     -   When editing a personal record, the change is immediately displayed in the personal records, next to or below the form depending on device, without a confirmation message.
     -   When deleting a personal record, a confimation modal is displayed to the user to confim the deletion before it is deleted.
--   Posts
+-   **Posts**
     -   When creating a post, the post is immediately displayed, and the user is redirected to the post detail page, without a confirmation message.
     -   When editing a post, the change is immediately displayed, and the user is redirected to the post detail page without a confirmation message.
     -   When deleting a personal record, a confimation modal is displayed to the user to confim the deletion before it is deleted.
--   Comments
+-   **Comments**
     -   When creating a comment, the comment is immediately displayed under the post, without a confirmation message.
     -   When editing a comment, the change is immediately displayed under the post, without a confirmation message.
     -   When deleting a comment, a confimation modal is displayed to the user to confim the deletion before it is deleted.
--   Likes
+-   **Likes**
     -   When clicking like on a post, the heart turns red and the like count directly gets incremented by 1.
     -   When clicking unlike on a post, the heart turns white and the like count directly gets decremented by 1.
--   Followers
+-   **Followers**
     -   When clicking follow on a user, the follow button text changes to unfollow and the follow count on that users profile directly increments by 1.
     -   When clicking unfollow on a user, the unfollow button text changes to follow and the follow count on that users profile directly decrements by 1.
 
