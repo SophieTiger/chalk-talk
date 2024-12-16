@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Container, Button, Modal } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 import { MoreDropdown } from "../../components/MoreDropdown";
 import styles from "../../styles/PersonalRecordDisplay.module.css";
 import btnStyles from "../../styles/Button.module.css";

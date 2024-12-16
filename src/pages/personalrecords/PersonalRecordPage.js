@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
 import PersonalRecordList from "./PersonalRecordList";
 import PersonalRecordForm from "./PersonalRecordForm";
 import { axiosReq } from "../../api/axiosDefaults";

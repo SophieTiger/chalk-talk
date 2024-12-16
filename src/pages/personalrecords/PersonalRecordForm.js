@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Form, Button, Alert, Container, Row, Col } from "react-bootstrap";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import { axiosReq } from "../../api/axiosDefaults";
 import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
