@@ -21,9 +21,9 @@ Return back to the [README.md](README.md) file.
   - [Browser Compatibility](#browser-compatibility)
   - [Responsiveness](#responsiveness)
 - [User story testing](#user-story-testing)
-- Automated Testing
-Tools Used
-Running Tests
+- [Automated Testing](#automated-testing)
+  - [Tools Used](#tools-used)
+  - [Running Tests](#running-tests)
 
 
 ## Validation
