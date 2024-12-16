@@ -54,7 +54,7 @@ function ProfilePage() {
         setProfileRecords(profileRecords.results || []); // Ensure results are handled correctly
         setHasLoaded(true);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     };
     fetchData();

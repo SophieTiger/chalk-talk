@@ -31,7 +31,7 @@ function PersonalRecordPage() {
         }
         setHasMore(data.next !== null);
       } catch (err) {
-        console.log(err);
+        // console.log(err);
       }
     }
   }, [currentUser, page]);
@@ -49,7 +49,6 @@ function PersonalRecordPage() {
   };
 
   const updateRecord = (updatedRecord) => {
-    console.log("updateRecord called with:", updatedRecord);
     setRecords(
       records.map((record) =>
         record.id === updatedRecord.id ? updatedRecord : record,
@@ -58,12 +57,11 @@ function PersonalRecordPage() {
   };
 
   const deleteRecord = async (id) => {
-    console.log("deleteRecord called with id:", id);
     try {
       await axiosReq.delete(`/personalrecords/${id}/`);
       setRecords(records.filter((record) => record.id !== id));
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
   };
 
@@ -88,7 +86,6 @@ function PersonalRecordPage() {
             profileId={currentUser?.profile_id}
             records={records}
             onEdit={(record) => {
-              console.log("onEdit called with:", record);
               setCurrentRecord(record);
               setIsEditing(true);
             }}
