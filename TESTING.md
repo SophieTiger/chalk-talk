@@ -34,16 +34,9 @@ To ensure the reliability, usability, and accessibility of Chalk Talk, various v
 -   **Purpose:** Validates the HTML code of the application to ensure it is free from syntax errors and adheres to the standards set by the World Wide Web Consortium (W3C).
 -   **Process:** All HTML pages of Chalk Talk are checked through the W3C validator to identify and fix any markup errors or warnings.
 
-Validation results with errors in index.html:
-![HTML validator errors](./readme/testing/index.html_errors.png)
+Validation results with no errors in index.html:
 
-To test if this is an issue on the deployed site I inspected the page source in the browser to see if the %PUBLIC_URL% placeholders had been replaced with actual paths:
-![index.html page source](./readme/testing/page_source_index.png)
-
-Since the %PUBLIC_URL% was not present I assume that this indicates that the build process on Heroku is handling the %PUBLIC_URL% placeholders as expected. The Create React App build tool is replacing these placeholders with the appropriate root path for the deployed application.
-
-When removing %PUBLIC_URL% from the code in the validator, all errors are gone:
-![HTML validator no errors](./readme/testing/index.html_validation.png)
+![HTML validator](./readme/testing/html_validator_url.png)
 
 ### CSS Validation
 -   **Tool Used:** [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
@@ -108,6 +101,7 @@ I have compressed some images, but could not increase the performance scores.
 Best practices show a score of 79 on some pages and it is due to refresh tokens.
 
 Comparing the Lighthouse scores for Chalk Talk to other social media platforms, such as Instagram, I find the above scores ok.
+
 ![Instagram Lighthouse scores](./readme/testing/lighthouse_instagram.png)
 
 
