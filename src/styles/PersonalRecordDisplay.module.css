@@ -7,7 +7,7 @@
   border-radius: 8px;
   font-family: "Permanent Marker", cursive;
   color: #333;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   border: 2px solid #d0d0d0;
   box-shadow: 0 0 0 4px #f0f0f0, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
 }
@@ -47,13 +47,7 @@
 @media (max-width: 768px) {
   .personalRecordItem .headerContainer {
     position: relative;
-    /* justify-content: center; */
   }
-
-  /* .personalRecordItem .exerciseTitle {
-    text-align: center;
-    width: 100%;
-  } */
 
   .personalRecordItem .percentageButton {
     position: absolute;

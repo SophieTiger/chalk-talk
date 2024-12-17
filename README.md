@@ -493,6 +493,8 @@ Since this is a social media platform meant to provide a smooth user experience,
 -   Add Notifications to let users know when interaction was made to their content, such as likes and comments.
 -   Add search functionality to personal records page to allow users with many PR's to search their records.
 -   Add the option for users to delete their own profile.
+-   Add the option for users to remove the profile picture once added, and not just change it.
+-   At the moment it is possible to add a personal record with a date that is in the future. That is something that in the future will be changed to only add dates in the past, for the date_achieved field.
 
 # Reusable React Components
 In the Chalk Talk application, several reusable components were developed or imported to maintain consistency, improve efficiency, and ensure scalability. Below is an overview of some key reusable components used throughout the application:
@@ -600,6 +602,7 @@ For all testing and validation, please refer to the [TESTING.md](/TESTING.md) fi
 ## Remaining Bugs
 -   **Bug:** Personal records (exercise title) is sticking to the left side on smaller screens and is not centered.
     -   I would say this is due to me using the same react component on different pages. Until now I haven't had the time to fix it.
+-   **Bug** On the Friends Feed page, the posts for a followed user are not directly updated in the feed when changing the follow status. The page has to be reloaded to display the relevant posts.
 
 # Deployment
 Deploying the Chalk Talk frontend involves using Heroku, a popular cloud platform that enables easy application deployment. Below are the steps for deploying the React frontend of the Chalk Talk application without using the Heroku CLI.

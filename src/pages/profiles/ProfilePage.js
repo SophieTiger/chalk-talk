@@ -32,7 +32,7 @@ function ProfilePage() {
   const [profile] = pageProfile.results || [];
   const is_owner = currentUser?.username === profile?.owner;
   const [profilePosts, setProfilePosts] = useState({ results: [] });
-  const [profileRecords, setProfileRecords] = useState([]); // Initialize as an empty array
+  const [profileRecords, setProfileRecords] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -153,7 +153,11 @@ function ProfilePage() {
   return (
     <Row>
       <Col className="py-2 p-0 p-lg-2" lg={8}>
-        <PersonalRecordList records={profileRecords} isOwner={false} mobile />
+        <PersonalRecordList
+          records={profileRecords}
+          isOwner={false}
+          mobile
+        />
         <Container className={appStyles.Content}>
           {hasLoaded ? (
             <>
