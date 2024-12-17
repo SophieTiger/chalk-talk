@@ -207,7 +207,6 @@ The scope plane defines the specific features and functionalities that Chalk Tal
     -   Create Personal Records: Users can create personal records to keep track of them.
     -   Edit/Delete Personal Records: Uusers can edit or delete Personal Records to manage them effectively.
     -   View Personal Records: Users can view their own and other users Personal Records.
-    -   **Filtering Personal Records**: Users can filter and search Personal Records by exercise if there are many in the list.
     -   Count percentages based on Personal Records: Users can use the functionality in the PR's page by clicking the percentage sign on each personal record to get percentages on that specific exercise based on what they have logged.
 
 -   **Platform Navigation and User Experience**
@@ -379,7 +378,9 @@ The table below describes the CRUD operations that can be performed on Chalk Tal
 ### All Existing Features with Screenshots
 #### Home Page
 -   The first contact with Chalk Talk is the Home page where the user immediately gets am understading of the purpose of the site. The Hero image with a gym setting, people talking, and a text clearly explaining why users should sign up or sign in is aiming to attract new users to the community.
+
 **Home page for non logged in users**
+
 ![Home page](./readme/homepage.png)
 
 **Home page for logged in users**

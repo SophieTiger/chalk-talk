@@ -57,9 +57,11 @@ Validation results with no errors in index.html:
 -   Run ESLint: To run ESLint across the whole project and identify any issues: `npx eslint .`
 
 ![ESLint warnings](./readme/testing/warnings_eslint.png)
+
     -   After fixing the warnings and installing "@babel/plugin-proposal-private-property-in-object" as suggested all warnings are now cleared.
  
 **Prettier for Code Formatting**
+
 To maintain a consistent code style across the project I used the terminal to run Prettier on my entire project:
 -   Install Prettier globally: `npm install -g prettier`
 -   Run: `prettier --write "src/**/*.{js,jsx}"`
